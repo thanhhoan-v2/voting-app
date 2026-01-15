@@ -344,6 +344,19 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
   const convertToEmbedUrl = (url: string) => {
     if (!url) return '';
     
+    // Google Share links에서 좌표 추출
+    const shareMatch = url.match(/share\.google\.com\/[^?]*\?([^&]*)/);
+    if (shareMatch) {
+      const params = new URLSearchParams(shareMatch[1]);
+      const center = params.get('center');
+      if (center) {
+        const [lat, lng] = center.split(',');
+        if (lat && lng) {
+          return `https://maps.google.com/maps?q=${lat.trim()},${lng.trim()}&output=embed`;
+        }
+      }
+    }
+    
     // Google Maps URL에서 좌표 추출 (@lat,lng 형식)
     const coordMatch = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
     if (coordMatch) {
@@ -366,7 +379,20 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
     // place ID가 있는 경우
     const placeMatch = url.match(/place\/([^\/]+)/);
     if (placeMatch) {
-      return `https://maps.google.com/maps/place/${placeMatch[1]}/output=embed`;
+      return `https://maps.google.com/place/${placeMatch[1]}/output=embed`;
+    }
+    
+    // Google Share links (https://share.google.com/...)
+    if (url.includes('share.google.com')) {
+      // Share 링크를 직접 embed으로 변환 시도
+      try {
+        // 공유 링크를 regular maps 링크로 변환
+        const embedUrl = url.replace('share.google.com', 'maps.google.com/maps');
+        return embedUrl + (embedUrl.includes('?') ? '&' : '?') + 'output=embed';
+      } catch {
+        // 실패 시 기본 링크 반환
+        return url;
+      }
     }
     
     // 기본 URL을 embed 형식으로 변환
@@ -380,7 +406,11 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
   // Google Maps URL 유효성 검사
   const isValidMapUrl = (url: string) => {
     if (!url) return true; // 빈 값은 허용
-    return url.includes('maps.google.com') || url.includes('google.com/maps');
+    return url.includes('maps.google.com') || 
+           url.includes('google.com/maps') ||
+           url.includes('share.google.com') ||
+           url.includes('maps.app.goo.gl') ||
+           url.includes('goo.gl/maps');
   };
 
   // 시간 포맷
@@ -642,17 +672,23 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                     type="url"
                     value={newOptionMapUrl}
                     onChange={(e) => setNewOptionMapUrl(e.target.value)}
-                    placeholder="https://maps.google.com/..."
+                    placeholder="Paste Google Maps link (works with share.google.com too)..."
                     className="input-field mb-4"
                   />
                   <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-3 mb-4">
                     <p className="text-xs font-medium text-blue-800 mb-1">🗺️ How to add a map:</p>
                     <ol className="text-xs text-blue-700 space-y-1 list-decimal list-inside">
                       <li>Go to Google Maps and find your location</li>
-                      <li>Click "Share" button</li>
+                      <li>Click "Share" button (or share.google.com link)</li>
                       <li>Copy the link that appears</li>
-                      <li>Paste it here (works with any Google Maps URL)</li>
+                      <li>Paste it here (supports all Google Maps formats)</li>
                     </ol>
+                    <div className="mt-2 text-xs text-blue-600">
+                      <strong>Supported formats:</strong><br/>
+                      • https://maps.google.com/...<br/>
+                      • https://share.google.com/...<br/>
+                      • https://goo.gl/maps/...
+                    </div>
                   </div>
 
                   {newOptionImage ? (

@@ -18,7 +18,7 @@ interface SnowfallComponentProps {
 }
 
 export default function SnowfallComponent({
-  enabled = false,
+  enabled = true,
   color = "#000000",
   snowflakeCount = 200,
   style = {},

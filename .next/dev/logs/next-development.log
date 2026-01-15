@@ -480,3 +480,33 @@ https://nextjs.org/docs/messages/module-not-found
 [00:07:12.452] Server  LOG     Checking vote for poll 3, user hoan_thanh
 [00:07:13.224] Server  LOG     Vote check completed in 773ms, found: true
 [00:07:13.491] Server  LOG     [8365ms] Total request completed
+[00:07:35.395] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:35.418] Server  LOG     [1ms] Starting fetch for poll 3
+[00:07:35.418] Server  LOG     Fetching poll 3
+[00:07:35.432] Server  LOG     [0ms] Starting fetch for poll 3
+[00:07:35.432] Server  LOG     Fetching poll 3
+[00:07:40.322] Server  LOG     getPollById completed in 4904ms for poll 3 with 4 options
+[00:07:40.323] Server  LOG     [4905ms] Data fetch completed
+[00:07:40.323] Server  LOG     [4906ms] Total request completed
+[00:07:44.266] Server  LOG     getPollById completed in 8834ms for poll 3 with 4 options
+[00:07:44.268] Server  LOG     [8835ms] Data fetch completed
+[00:07:44.268] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:07:45.035] Server  LOG     Vote check completed in 766ms, found: true
+[00:07:45.824] Server  LOG     [10392ms] Total request completed
+[00:09:04.116] Server  LOG     ✓ Compiled in 26ms
+[00:09:30.414] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:30.430] Server  LOG     [0ms] Starting fetch for poll 3
+[00:09:30.431] Server  LOG     Fetching poll 3
+[00:09:30.460] Server  LOG     [0ms] Starting fetch for poll 3
+[00:09:30.460] Server  LOG     Fetching poll 3
+[00:09:34.984] Server  LOG     getPollById completed in 4524ms for poll 3 with 4 options
+[00:09:34.985] Server  LOG     [4525ms] Data fetch completed
+[00:09:34.985] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:09:35.249] Server  LOG     Vote check completed in 264ms, found: true
+[00:09:35.535] Server  LOG     [5076ms] Total request completed
+[00:09:41.317] Server  LOG     getPollById completed in 10886ms for poll 3 with 4 options
+[00:09:41.318] Server  LOG     [10887ms] Data fetch completed
+[00:09:41.318] Server  LOG     [10888ms] Total request completed
+[00:10:36.764] Server  LOG     ✓ Compiled in 50ms
+[00:11:16.872] Server  LOG     ✓ Compiled in 57ms
+[00:11:31.205] Server  LOG     ✓ Compiled in 50ms
