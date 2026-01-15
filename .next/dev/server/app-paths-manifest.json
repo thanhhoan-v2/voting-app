@@ -1,5 +1,7 @@
 {
   "/api/polls/[id]/options/route": "app/api/polls/[id]/options/route.js",
   "/api/polls/[id]/route": "app/api/polls/[id]/route.js",
-  "/polls/[id]/page": "app/polls/[id]/page.js"
+  "/page": "app/page.js",
+  "/polls/[id]/page": "app/polls/[id]/page.js",
+  "/polls/page": "app/polls/page.js"
 }

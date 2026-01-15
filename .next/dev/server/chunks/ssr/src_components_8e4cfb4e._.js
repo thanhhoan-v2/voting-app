@@ -14,7 +14,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$UserConte
 ;
 ;
 function UserMenu({ displayName }) {
-    const { setDisplayName } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$UserContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useUser"])();
+    const { setDisplayName, snowfallEnabled, setSnowfallEnabled } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$UserContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useUser"])();
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const menuRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     // 외부 클릭 시 메뉴 닫기
@@ -117,6 +117,25 @@ function UserMenu({ displayName }) {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: ()=>setSnowfallEnabled(!snowfallEnabled),
+                        className: "w-full px-4 py-3 text-left text-sm font-medium text-[var(--text-primary)] hover:bg-[var(--accent-sky)] flex items-center gap-2 transition-colors",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-lg",
+                                children: snowfallEnabled ? '❄️' : '☀️'
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/UserMenu.tsx",
+                                lineNumber: 65,
+                                columnNumber: 13
+                            }, this),
+                            snowfallEnabled ? 'Disable Snowfall' : 'Enable Snowfall'
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/UserMenu.tsx",
+                        lineNumber: 61,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: handleLogout,
                         className: "w-full px-4 py-3 text-left text-sm font-medium text-[var(--accent-coral)] hover:bg-red-50 flex items-center gap-2 transition-colors",
                         children: [
@@ -132,19 +151,19 @@ function UserMenu({ displayName }) {
                                     d: "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/UserMenu.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 73,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/UserMenu.tsx",
-                                lineNumber: 65,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, this),
                             "Log out"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/UserMenu.tsx",
-                        lineNumber: 61,
+                        lineNumber: 68,
                         columnNumber: 11
                     }, this)
                 ]
@@ -279,7 +298,7 @@ function Header({ showBackLink = false, backLinkHref = '/polls', backLinkText = 
                 }, void 0, true, {
                     fileName: "[project]/src/components/Header.tsx",
                     lineNumber: 28,
-                    columnNumber: 9
+                    columnNumber: 10
                 }, this)
             ]
         }, void 0, true, {

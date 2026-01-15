@@ -16,7 +16,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 function UserMenu({ displayName }) {
     _s();
-    const { setDisplayName } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$UserContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"])();
+    const { setDisplayName, snowfallEnabled, setSnowfallEnabled } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$UserContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"])();
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const menuRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     // 외부 클릭 시 메뉴 닫기
@@ -125,6 +125,25 @@ function UserMenu({ displayName }) {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: ()=>setSnowfallEnabled(!snowfallEnabled),
+                        className: "w-full px-4 py-3 text-left text-sm font-medium text-[var(--text-primary)] hover:bg-[var(--accent-sky)] flex items-center gap-2 transition-colors",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-lg",
+                                children: snowfallEnabled ? '❄️' : '☀️'
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/UserMenu.tsx",
+                                lineNumber: 65,
+                                columnNumber: 13
+                            }, this),
+                            snowfallEnabled ? 'Disable Snowfall' : 'Enable Snowfall'
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/UserMenu.tsx",
+                        lineNumber: 61,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: handleLogout,
                         className: "w-full px-4 py-3 text-left text-sm font-medium text-[var(--accent-coral)] hover:bg-red-50 flex items-center gap-2 transition-colors",
                         children: [
@@ -140,19 +159,19 @@ function UserMenu({ displayName }) {
                                     d: "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/UserMenu.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 73,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/UserMenu.tsx",
-                                lineNumber: 65,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, this),
                             "Log out"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/UserMenu.tsx",
-                        lineNumber: 61,
+                        lineNumber: 68,
                         columnNumber: 11
                     }, this)
                 ]
@@ -168,7 +187,7 @@ function UserMenu({ displayName }) {
         columnNumber: 5
     }, this);
 }
-_s(UserMenu, "wRVPR6zTSLugNxtHmBeDqLbiEJk=", false, function() {
+_s(UserMenu, "aa3XNKhR6+LSUeonjqY1iy78swE=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$UserContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"]
     ];
@@ -300,7 +319,7 @@ function Header({ showBackLink = false, backLinkHref = '/polls', backLinkText = 
                 }, void 0, true, {
                     fileName: "[project]/src/components/Header.tsx",
                     lineNumber: 28,
-                    columnNumber: 9
+                    columnNumber: 10
                 }, this)
             ]
         }, void 0, true, {

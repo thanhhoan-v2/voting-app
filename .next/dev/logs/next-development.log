@@ -513,3 +513,20 @@ https://nextjs.org/docs/messages/module-not-found
 [00:12:26.942] Server  LOG     Option added: {}
 [00:14:53.761] Server  LOG     ✓ Compiled in 182ms
 [00:15:11.624] Server  LOG     ✓ Compiled in 63ms
+[00:22:29.835] Server  LOG     Tables created successfully
+[00:22:30.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:31.771] Server  LOG     Polls fetched: [{...}]
+[00:22:32.953] Server  LOG     [0ms] Starting fetch for poll 3
+[00:22:32.954] Server  LOG     Fetching poll 3
+[00:22:38.289] Server  LOG     getPollById completed in 5336ms for poll 3 with 5 options
+[00:22:38.290] Server  LOG     [5337ms] Data fetch completed
+[00:22:38.291] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:22:39.156] Server  LOG     Vote check completed in 865ms, found: true
+[00:22:39.948] Server  LOG     [6994ms] Total request completed
+[00:22:39.987] Server  LOG     [0ms] Starting fetch for poll 3
+[00:22:39.987] Server  LOG     Fetching poll 3
+[00:22:45.273] Server  LOG     getPollById completed in 5285ms for poll 3 with 5 options
+[00:22:45.275] Server  LOG     [5288ms] Data fetch completed
+[00:22:45.276] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:22:46.031] Server  LOG     Vote check completed in 755ms, found: true
+[00:22:46.777] Server  LOG     [6789ms] Total request completed
