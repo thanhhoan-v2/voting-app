@@ -1061,70 +1061,53 @@ function PollPage({ params }) {
                                                     option.map_url && isValidMapUrl(option.map_url) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "mb-3",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "relative",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
-                                                                        src: convertToEmbedUrl(option.map_url),
-                                                                        width: "100%",
-                                                                        height: "200",
-                                                                        style: {
-                                                                            border: 0
-                                                                        },
-                                                                        allowFullScreen: true,
-                                                                        loading: "lazy",
-                                                                        className: "rounded-lg border-2 border-[var(--border-color)]",
-                                                                        title: "Map Location",
-                                                                        onError: (e)=>{
-                                                                            console.error('Map iframe failed to load:', e);
-                                                                            e.currentTarget.style.display = 'none';
-                                                                            e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                                                                        }
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                        lineNumber: 564,
-                                                                        columnNumber: 28
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "hidden p-3 bg-yellow-100 border-2 border-yellow-300 rounded-lg text-sm",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                className: "font-medium mb-1",
-                                                                                children: "📍 Map Available"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                                lineNumber: 580,
-                                                                                columnNumber: 30
-                                                                            }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                                href: option.map_url,
-                                                                                target: "_blank",
-                                                                                rel: "noopener noreferrer",
-                                                                                className: "text-blue-600 underline hover:text-blue-800",
-                                                                                children: "Open location in new tab →"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                                lineNumber: 581,
-                                                                                columnNumber: 30
-                                                                            }, this)
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                        lineNumber: 579,
-                                                                        columnNumber: 28
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-sm text-[var(--text-muted)] mb-2",
+                                                                children: "📍 Location:"
+                                                            }, void 0, false, {
                                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
                                                                 lineNumber: 563,
                                                                 columnNumber: 26
                                                             }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-xs text-[var(--text-muted)] mt-1",
-                                                                children: "📍 Location added"
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "relative mb-2",
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                                                                    src: `https://www.openstreetmap.org/export/embed.html?bbox=-0.01,-0.01,0.01,0.01&layer=mapnik&marker=&`,
+                                                                    width: "100%",
+                                                                    height: "200",
+                                                                    style: {
+                                                                        border: 0
+                                                                    },
+                                                                    loading: "lazy",
+                                                                    className: "rounded-lg border-2 border-[var(--border-color)] bg-gray-100",
+                                                                    title: "Map Preview"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/polls/[id]/page.tsx",
+                                                                    lineNumber: 567,
+                                                                    columnNumber: 28
+                                                                }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                lineNumber: 591,
+                                                                lineNumber: 566,
+                                                                columnNumber: 26
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                                href: option.map_url,
+                                                                target: "_blank",
+                                                                rel: "noopener noreferrer",
+                                                                className: "block w-full text-center px-4 py-3 bg-[var(--accent-sky)] text-white rounded-lg border-2 border-[var(--border-color)] hover:bg-[var(--text-primary)] transition-colors font-medium",
+                                                                children: "🗺️ Open in Google Maps"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/app/polls/[id]/page.tsx",
+                                                                lineNumber: 579,
+                                                                columnNumber: 26
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-xs text-[var(--text-muted)] mt-2",
+                                                                children: "Click to view location in Google Maps"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/app/polls/[id]/page.tsx",
+                                                                lineNumber: 587,
                                                                 columnNumber: 26
                                                             }, this)
                                                         ]
@@ -1153,17 +1136,17 @@ function PollPage({ params }) {
                                                                                 d: "M5 13l4 4L19 7"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                                lineNumber: 602,
+                                                                                lineNumber: 598,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                            lineNumber: 601,
+                                                                            lineNumber: 597,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                        lineNumber: 599,
+                                                                        lineNumber: 595,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1171,13 +1154,13 @@ function PollPage({ params }) {
                                                                         children: option.option_text
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                        lineNumber: 606,
+                                                                        lineNumber: 602,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                lineNumber: 598,
+                                                                lineNumber: 594,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1191,7 +1174,7 @@ function PollPage({ params }) {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                        lineNumber: 612,
+                                                                        lineNumber: 608,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1199,19 +1182,19 @@ function PollPage({ params }) {
                                                                         children: option.vote_count
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                        lineNumber: 616,
+                                                                        lineNumber: 612,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                lineNumber: 610,
+                                                                lineNumber: 606,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                        lineNumber: 597,
+                                                        lineNumber: 593,
                                                         columnNumber: 21
                                                     }, this),
                                                     option.added_by_name && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1222,7 +1205,7 @@ function PollPage({ params }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                        lineNumber: 623,
+                                                        lineNumber: 619,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
@@ -1252,12 +1235,12 @@ function PollPage({ params }) {
                                     children: "Change your vote"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                    lineNumber: 636,
+                                    lineNumber: 632,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                lineNumber: 635,
+                                lineNumber: 631,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1279,19 +1262,19 @@ function PollPage({ params }) {
                                                 d: "M12 4v16m8-8H4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 655,
+                                                lineNumber: 651,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 654,
+                                            lineNumber: 650,
                                             columnNumber: 17
                                         }, this),
                                         "Add New Option"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                    lineNumber: 649,
+                                    lineNumber: 645,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                     onSubmit: handleAddOption,
@@ -1302,7 +1285,7 @@ function PollPage({ params }) {
                                             children: "Add New Option"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 661,
+                                            lineNumber: 657,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1314,7 +1297,7 @@ function PollPage({ params }) {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 662,
+                                            lineNumber: 658,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1325,7 +1308,7 @@ function PollPage({ params }) {
                                             className: "input-field mb-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 671,
+                                            lineNumber: 667,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1336,7 +1319,7 @@ function PollPage({ params }) {
                                                     children: "🗺️ How to add a map:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 679,
+                                                    lineNumber: 675,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1346,34 +1329,34 @@ function PollPage({ params }) {
                                                             children: "Go to Google Maps and find your location"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 681,
+                                                            lineNumber: 677,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: 'Click "Share" button (or share.google.com link)'
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 682,
+                                                            lineNumber: 678,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "Copy the link that appears"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 683,
+                                                            lineNumber: 679,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "Paste it here (supports all Google Maps formats)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 684,
+                                                            lineNumber: 680,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 680,
+                                                    lineNumber: 676,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1383,37 +1366,37 @@ function PollPage({ params }) {
                                                             children: "Supported formats:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 687,
+                                                            lineNumber: 683,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 687,
+                                                            lineNumber: 683,
                                                             columnNumber: 58
                                                         }, this),
                                                         "• https://maps.google.com/...",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 688,
+                                                            lineNumber: 684,
                                                             columnNumber: 52
                                                         }, this),
                                                         "• https://share.google.com/...",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 689,
+                                                            lineNumber: 685,
                                                             columnNumber: 53
                                                         }, this),
                                                         "• https://goo.gl/maps/..."
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 686,
+                                                    lineNumber: 682,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 678,
+                                            lineNumber: 674,
                                             columnNumber: 19
                                         }, this),
                                         newOptionImage ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1424,7 +1407,7 @@ function PollPage({ params }) {
                                                     alt: "Preview"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 696,
+                                                    lineNumber: 692,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1437,13 +1420,13 @@ function PollPage({ params }) {
                                                     children: "×"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 697,
+                                                    lineNumber: 693,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 695,
+                                            lineNumber: 691,
                                             columnNumber: 19
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "image-upload-zone mb-4",
@@ -1461,12 +1444,12 @@ function PollPage({ params }) {
                                                         d: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                        lineNumber: 714,
+                                                        lineNumber: 710,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 713,
+                                                    lineNumber: 709,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1474,13 +1457,13 @@ function PollPage({ params }) {
                                                     children: "Add image (optional)"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 716,
+                                                    lineNumber: 712,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 709,
+                                            lineNumber: 705,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1494,7 +1477,7 @@ function PollPage({ params }) {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 719,
+                                            lineNumber: 715,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1506,7 +1489,7 @@ function PollPage({ params }) {
                                                     children: "Add Option"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 731,
+                                                    lineNumber: 727,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1520,24 +1503,24 @@ function PollPage({ params }) {
                                                     children: "Cancel"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 734,
+                                                    lineNumber: 730,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 730,
+                                            lineNumber: 726,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                    lineNumber: 660,
+                                    lineNumber: 656,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                lineNumber: 647,
+                                lineNumber: 643,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -1565,17 +1548,17 @@ function PollPage({ params }) {
                                             d: "M5 13l4 4L19 7"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 757,
+                                            lineNumber: 753,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                        lineNumber: 756,
+                                        lineNumber: 752,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                    lineNumber: 755,
+                                    lineNumber: 751,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1586,7 +1569,7 @@ function PollPage({ params }) {
                                             children: "Vote submitted!"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 761,
+                                            lineNumber: 757,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1598,13 +1581,13 @@ function PollPage({ params }) {
                                                     children: voteInfo.option_text
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 762,
+                                                    lineNumber: 758,
                                                     columnNumber: 70
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 762,
+                                            lineNumber: 758,
                                             columnNumber: 17
                                         }, this),
                                         voteInfo.map_url && isValidMapUrl(voteInfo.map_url) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1612,74 +1595,57 @@ function PollPage({ params }) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-sm text-[var(--text-muted)] mb-2",
-                                                    children: "Your voted location:"
+                                                    children: "📍 Your voted location:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 767,
+                                                    lineNumber: 763,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
-                                                            src: convertToEmbedUrl(voteInfo.map_url),
-                                                            width: "100%",
-                                                            height: "150",
-                                                            style: {
-                                                                border: 0
-                                                            },
-                                                            allowFullScreen: true,
-                                                            loading: "lazy",
-                                                            className: "rounded-lg border-2 border-[var(--border-color)]",
-                                                            title: "Voted Location",
-                                                            onError: (e)=>{
-                                                                console.error('Vote map iframe failed to load:', e);
-                                                                e.currentTarget.style.display = 'none';
-                                                                e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                                                            }
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 769,
-                                                            columnNumber: 23
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "hidden p-3 bg-yellow-100 border-2 border-yellow-300 rounded-lg text-sm",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "font-medium mb-1",
-                                                                    children: "📍 Map Available"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                    lineNumber: 785,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                    href: voteInfo.map_url,
-                                                                    target: "_blank",
-                                                                    rel: "noopener noreferrer",
-                                                                    className: "text-blue-600 underline hover:text-blue-800",
-                                                                    children: "Open location in new tab →"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                    lineNumber: 786,
-                                                                    columnNumber: 25
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 784,
-                                                            columnNumber: 23
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
+                                                    className: "relative mb-2",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                                                        src: `https://www.openstreetmap.org/export/embed.html?bbox=-0.01,-0.01,0.01,0.01&layer=mapnik&marker=&`,
+                                                        width: "100%",
+                                                        height: "150",
+                                                        style: {
+                                                            border: 0
+                                                        },
+                                                        loading: "lazy",
+                                                        className: "rounded-lg border-2 border-[var(--border-color)] bg-gray-100",
+                                                        title: "Voted Location"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/polls/[id]/page.tsx",
+                                                        lineNumber: 767,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 768,
+                                                    lineNumber: 766,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                    href: voteInfo.map_url,
+                                                    target: "_blank",
+                                                    rel: "noopener noreferrer",
+                                                    className: "block w-full text-center px-4 py-3 bg-[var(--accent-sky)] text-white rounded-lg border-2 border-[var(--border-color)] hover:bg-[var(--text-primary)] transition-colors font-medium",
+                                                    children: "🗺️ View in Google Maps"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/app/polls/[id]/page.tsx",
+                                                    lineNumber: 779,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-xs text-[var(--text-muted)] mt-2",
+                                                    children: "Click to view your voted location in Google Maps"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/app/polls/[id]/page.tsx",
+                                                    lineNumber: 787,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 766,
+                                            lineNumber: 762,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1697,12 +1663,12 @@ function PollPage({ params }) {
                                                         d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                        lineNumber: 801,
+                                                        lineNumber: 795,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 800,
+                                                    lineNumber: 794,
                                                     columnNumber: 19
                                                 }, this),
                                                 "Voted ",
@@ -1710,24 +1676,24 @@ function PollPage({ params }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 799,
+                                            lineNumber: 793,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                    lineNumber: 760,
+                                    lineNumber: 756,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                            lineNumber: 754,
+                            lineNumber: 750,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                        lineNumber: 753,
+                        lineNumber: 749,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1750,17 +1716,17 @@ function PollPage({ params }) {
                                                 d: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 815,
+                                                lineNumber: 809,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 814,
+                                            lineNumber: 808,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                        lineNumber: 813,
+                                        lineNumber: 807,
                                         columnNumber: 13
                                     }, this),
                                     "Comments (",
@@ -1769,7 +1735,7 @@ function PollPage({ params }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                lineNumber: 812,
+                                lineNumber: 806,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1784,7 +1750,7 @@ function PollPage({ params }) {
                                         rows: 3
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                        lineNumber: 823,
+                                        lineNumber: 817,
                                         columnNumber: 13
                                     }, this),
                                     commentImage ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1795,7 +1761,7 @@ function PollPage({ params }) {
                                                 alt: "Preview"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 833,
+                                                lineNumber: 827,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1808,13 +1774,13 @@ function PollPage({ params }) {
                                                 children: "×"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 834,
+                                                lineNumber: 828,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                        lineNumber: 832,
+                                        lineNumber: 826,
                                         columnNumber: 15
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "image-upload-zone mb-4",
@@ -1832,12 +1798,12 @@ function PollPage({ params }) {
                                                     d: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 851,
+                                                    lineNumber: 845,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 850,
+                                                lineNumber: 844,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1845,13 +1811,13 @@ function PollPage({ params }) {
                                                 children: "Add image (optional)"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 853,
+                                                lineNumber: 847,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                        lineNumber: 846,
+                                        lineNumber: 840,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1865,7 +1831,7 @@ function PollPage({ params }) {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                        lineNumber: 856,
+                                        lineNumber: 850,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1880,13 +1846,13 @@ function PollPage({ params }) {
                                                         children: displayName || 'Anonymous'
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                        lineNumber: 869,
+                                                        lineNumber: 863,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 868,
+                                                lineNumber: 862,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1896,19 +1862,19 @@ function PollPage({ params }) {
                                                 children: "Post Comment"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 871,
+                                                lineNumber: 865,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                        lineNumber: 867,
+                                        lineNumber: 861,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                lineNumber: 822,
+                                lineNumber: 816,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1928,25 +1894,25 @@ function PollPage({ params }) {
                                                 d: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                lineNumber: 886,
+                                                lineNumber: 880,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 885,
+                                            lineNumber: 879,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: "No comments yet. Be the first to share your thoughts!"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 888,
+                                            lineNumber: 882,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                    lineNumber: 884,
+                                    lineNumber: 878,
                                     columnNumber: 15
                                 }, this) : comments.map((comment, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "comment-card animate-scale-in opacity-0",
@@ -1962,7 +1928,7 @@ function PollPage({ params }) {
                                                     children: comment.display_name.charAt(0).toUpperCase()
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 901,
+                                                    lineNumber: 895,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1979,7 +1945,7 @@ function PollPage({ params }) {
                                                                             children: comment.display_name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                            lineNumber: 907,
+                                                                            lineNumber: 901,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1987,13 +1953,13 @@ function PollPage({ params }) {
                                                                             children: formatTime(comment.created_at)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                            lineNumber: 908,
+                                                                            lineNumber: 902,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                    lineNumber: 906,
+                                                                    lineNumber: 900,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 comment.display_name === displayName && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2012,23 +1978,23 @@ function PollPage({ params }) {
                                                                             d: "M6 18L18 6M6 6l12 12"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                            lineNumber: 917,
+                                                                            lineNumber: 911,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                        lineNumber: 916,
+                                                                        lineNumber: 910,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                                    lineNumber: 911,
+                                                                    lineNumber: 905,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 905,
+                                                            lineNumber: 899,
                                                             columnNumber: 23
                                                         }, this),
                                                         comment.content && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2036,7 +2002,7 @@ function PollPage({ params }) {
                                                             children: comment.content
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 923,
+                                                            lineNumber: 917,
                                                             columnNumber: 25
                                                         }, this),
                                                         comment.image_url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -2045,35 +2011,35 @@ function PollPage({ params }) {
                                                             className: "comment-image"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                            lineNumber: 926,
+                                                            lineNumber: 920,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                                    lineNumber: 904,
+                                                    lineNumber: 898,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                            lineNumber: 900,
+                                            lineNumber: 894,
                                             columnNumber: 19
                                         }, this)
                                     }, comment.id, false, {
                                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                        lineNumber: 892,
+                                        lineNumber: 886,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/polls/[id]/page.tsx",
-                                lineNumber: 882,
+                                lineNumber: 876,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/polls/[id]/page.tsx",
-                        lineNumber: 811,
+                        lineNumber: 805,
                         columnNumber: 9
                     }, this)
                 ]

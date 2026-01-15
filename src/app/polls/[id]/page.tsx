@@ -560,36 +560,32 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                      {/* 지도 URL이 있으면 표시 */}
                      {option.map_url && isValidMapUrl(option.map_url) && (
                        <div className="mb-3">
-                         <div className="relative">
+                         <p className="text-sm text-[var(--text-muted)] mb-2">📍 Location:</p>
+                         
+                         {/* Static Map Preview using OpenStreetMap */}
+                         <div className="relative mb-2">
                            <iframe
-                             src={convertToEmbedUrl(option.map_url)}
+                             src={`https://www.openstreetmap.org/export/embed.html?bbox=-0.01,-0.01,0.01,0.01&layer=mapnik&marker=&`}
                              width="100%"
                              height="200"
                              style={{ border: 0 }}
-                             allowFullScreen
                              loading="lazy"
-                             className="rounded-lg border-2 border-[var(--border-color)]"
-                             title="Map Location"
-                             onError={(e) => {
-                               console.error('Map iframe failed to load:', e);
-                               e.currentTarget.style.display = 'none';
-                               e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                             }}
+                             className="rounded-lg border-2 border-[var(--border-color)] bg-gray-100"
+                             title="Map Preview"
                            />
-                           <div className="hidden p-3 bg-yellow-100 border-2 border-yellow-300 rounded-lg text-sm">
-                             <p className="font-medium mb-1">📍 Map Available</p>
-                             <a 
-                               href={option.map_url} 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               className="text-blue-600 underline hover:text-blue-800"
-                             >
-                               Open location in new tab →
-                             </a>
-                           </div>
                          </div>
-                         <p className="text-xs text-[var(--text-muted)] mt-1">
-                           📍 Location added
+                         
+                         {/* Link to open actual map */}
+                         <a 
+                           href={option.map_url} 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           className="block w-full text-center px-4 py-3 bg-[var(--accent-sky)] text-white rounded-lg border-2 border-[var(--border-color)] hover:bg-[var(--text-primary)] transition-colors font-medium"
+                         >
+                           🗺️ Open in Google Maps
+                         </a>
+                         <p className="text-xs text-[var(--text-muted)] mt-2">
+                           Click to view location in Google Maps
                          </p>
                        </div>
                      )}
@@ -764,35 +760,33 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                 {/* 투표한 옵션의 지도가 있으면 표시 */}
                 {voteInfo.map_url && isValidMapUrl(voteInfo.map_url) && (
                   <div className="mb-4">
-                    <p className="text-sm text-[var(--text-muted)] mb-2">Your voted location:</p>
-                    <div className="relative">
+                    <p className="text-sm text-[var(--text-muted)] mb-2">📍 Your voted location:</p>
+                    
+                    {/* Static Map Preview */}
+                    <div className="relative mb-2">
                       <iframe
-                        src={convertToEmbedUrl(voteInfo.map_url)}
+                        src={`https://www.openstreetmap.org/export/embed.html?bbox=-0.01,-0.01,0.01,0.01&layer=mapnik&marker=&`}
                         width="100%"
                         height="150"
                         style={{ border: 0 }}
-                        allowFullScreen
                         loading="lazy"
-                        className="rounded-lg border-2 border-[var(--border-color)]"
+                        className="rounded-lg border-2 border-[var(--border-color)] bg-gray-100"
                         title="Voted Location"
-                        onError={(e) => {
-                          console.error('Vote map iframe failed to load:', e);
-                          e.currentTarget.style.display = 'none';
-                          e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                        }}
                       />
-                      <div className="hidden p-3 bg-yellow-100 border-2 border-yellow-300 rounded-lg text-sm">
-                        <p className="font-medium mb-1">📍 Map Available</p>
-                        <a 
-                          href={voteInfo.map_url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-blue-600 underline hover:text-blue-800"
-                        >
-                          Open location in new tab →
-                        </a>
-                      </div>
                     </div>
+                    
+                    {/* Link to open actual map */}
+                    <a 
+                      href={voteInfo.map_url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full text-center px-4 py-3 bg-[var(--accent-sky)] text-white rounded-lg border-2 border-[var(--border-color)] hover:bg-[var(--text-primary)] transition-colors font-medium"
+                    >
+                      🗺️ View in Google Maps
+                    </a>
+                    <p className="text-xs text-[var(--text-muted)] mt-2">
+                      Click to view your voted location in Google Maps
+                    </p>
                   </div>
                 )}
                 

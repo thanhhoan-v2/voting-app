@@ -510,3 +510,6 @@ https://nextjs.org/docs/messages/module-not-found
 [00:10:36.764] Server  LOG     ✓ Compiled in 50ms
 [00:11:16.872] Server  LOG     ✓ Compiled in 57ms
 [00:11:31.205] Server  LOG     ✓ Compiled in 50ms
+[00:12:26.942] Server  LOG     Option added: {}
+[00:14:53.761] Server  LOG     ✓ Compiled in 182ms
+[00:15:11.624] Server  LOG     ✓ Compiled in 63ms
