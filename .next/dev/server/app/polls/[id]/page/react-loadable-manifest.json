@@ -1,1 +1,9 @@
-{}
+{
+  "[project]/node_modules/react-snowfall/lib/index.js [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/node_modules/react-snowfall/lib/index.js [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_e11d7d92._.js",
+      "static/chunks/node_modules_react-snowfall_lib_index_215137fd.js"
+    ]
+  }
+}

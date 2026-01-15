@@ -1,51 +1,230 @@
-[00:00:00.776] Server  LOG     ✓ Ready in 607ms
-[00:00:11.372] Server  LOG     Tables created successfully
-[00:00:11.608] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:13.599] Server  LOG     Polls fetched: [{...}]
-[00:00:15.219] Server  LOG     [1ms] Starting fetch for poll 3
-[00:00:15.220] Server  LOG     Fetching poll 3
-[00:00:19.583] Server  LOG     getPollById completed in 4363ms for poll 3 with 2 options
-[00:00:19.584] Server  LOG     [4364ms] Data fetch completed
-[00:00:19.584] Server  LOG     Checking vote for poll 3, user hoan_thanh
-[00:00:20.393] Server  LOG     Vote check completed in 809ms, found: false
-[00:00:20.645] Server  LOG     [5427ms] Total request completed
-[00:00:20.678] Server  LOG     [0ms] Starting fetch for poll 3
-[00:00:20.678] Server  LOG     Fetching poll 3
-[00:00:24.674] Server  LOG     getPollById completed in 3995ms for poll 3 with 2 options
-[00:00:24.679] Server  LOG     [4001ms] Data fetch completed
-[00:00:24.682] Server  LOG     Checking vote for poll 3, user hoan_thanh
-[00:00:24.958] Server  LOG     Vote check completed in 276ms, found: false
-[00:00:25.211] Server  LOG     [4533ms] Total request completed
-[00:01:03.690] Server  LOG     Option added: {}
-[00:01:38.263] Server  LOG     ✓ Compiled in 50ms
-[00:01:48.502] Server  LOG     ✓ Compiled in 43ms
-[00:02:00.367] Server  LOG     ✓ Compiled in 77ms
-[00:02:12.513] Server  LOG     ✓ Compiled in 46ms
-[00:02:21.102] Server  LOG     ✓ Compiled in 45ms
-[00:02:45.174] Server  LOG     ✓ Compiled in 63ms
-[00:02:54.734] Server  LOG     ✓ Compiled in 59ms
-[00:03:01.927] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:01.940] Server  LOG     [0ms] Starting fetch for poll 3
-[00:03:01.940] Server  LOG     Fetching poll 3
-[00:03:01.959] Server  LOG     [0ms] Starting fetch for poll 3
-[00:03:01.959] Server  LOG     Fetching poll 3
-[00:03:03.157] Server  LOG     ✓ Compiled in 51ms
-[00:03:06.602] Server  LOG     getPollById completed in 4643ms for poll 3 with 3 options
-[00:03:06.602] Server  LOG     [4643ms] Data fetch completed
-[00:03:06.602] Server  LOG     Checking vote for poll 3, user hoan_thanh
-[00:03:06.843] Server  LOG     Vote check completed in 241ms, found: false
-[00:03:06.871] Server  LOG     getPollById completed in 4930ms for poll 3 with 3 options
-[00:03:06.871] Server  LOG     [4930ms] Data fetch completed
-[00:03:06.871] Server  LOG     [4932ms] Total request completed
-[00:03:07.085] Server  LOG     [5126ms] Total request completed
-[00:03:11.262] Server  LOG     Vote attempt: {}
-[00:03:11.263] Server  LOG     Checking existing vote...
-[00:03:12.008] Server  LOG     Existing vote result: []
-[00:03:12.009] Server  LOG     Inserting new vote...
-[00:03:13.019] Server  LOG     Vote recorded for poll: 3 "option:" 6 "by:" "hoan_thanh"
-[00:03:43.568] Server  LOG     Option added: {}
-[00:04:33.864] Server  LOG     ✓ Compiled in 63ms
-[00:04:42.367] Server  LOG     ✓ Compiled in 62ms
-[00:04:56.873] Server  LOG     ✓ Compiled in 61ms
-[00:05:11.842] Server  LOG     ✓ Compiled in 36ms
-[00:05:24.838] Server  LOG     ✓ Compiled in 31ms
+[00:00:00.681] Server  LOG     ✓ Ready in 512ms
+[00:00:02.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.152] Server  LOG     [0ms] Starting fetch for poll 3
+[00:00:03.153] Server  LOG     Fetching poll 3
+[00:00:03.154] Server  LOG     [2ms] Starting fetch for poll 3
+[00:00:03.154] Server  LOG     Fetching poll 3
+[00:00:07.404] Server  LOG     getPollById completed in 4250ms for poll 3 with 4 options
+[00:00:07.405] Server  LOG     [4251ms] Data fetch completed
+[00:00:07.405] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:00:07.658] Server  LOG     Vote check completed in 253ms, found: true
+[00:00:07.981] Server  LOG     [4829ms] Total request completed
+[00:00:08.065] Server  LOG     getPollById completed in 4911ms for poll 3 with 4 options
+[00:00:08.066] Server  LOG     [4912ms] Data fetch completed
+[00:00:08.066] Server  LOG     [4914ms] Total request completed
+[00:00:29.457] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:29.487] Server  LOG     [0ms] Starting fetch for poll 3
+[00:00:29.488] Server  LOG     Fetching poll 3
+[00:00:29.493] Server  LOG     [0ms] Starting fetch for poll 3
+[00:00:29.493] Server  LOG     Fetching poll 3
+[00:00:32.599] Server  LOG     getPollById completed in 3111ms for poll 3 with 4 options
+[00:00:32.600] Server  LOG     [3112ms] Data fetch completed
+[00:00:32.600] Server  LOG     [3114ms] Total request completed
+[00:00:34.261] Server  LOG     getPollById completed in 4767ms for poll 3 with 4 options
+[00:00:34.262] Server  LOG     [4768ms] Data fetch completed
+[00:00:34.262] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:00:34.595] Server  LOG     Vote check completed in 333ms, found: true
+[00:00:34.848] Server  LOG     [5355ms] Total request completed
+[00:00:50.043] Server  LOG     ✓ Compiled in 98ms
+[00:01:14.939] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/contexts/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:14.997] Server  LOG     ✓ Compiled in 81ms
+[00:01:15.122] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:15.163] Server  LOG     [1ms] Starting fetch for poll 3
+[00:01:15.164] Server  LOG     Fetching poll 3
+[00:01:15.174] Server  LOG     [0ms] Starting fetch for poll 3
+[00:01:15.174] Server  LOG     Fetching poll 3
+[00:01:20.591] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/contexts/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:20.631] Server  LOG     ✓ Compiled in 31ms
+[00:01:20.734] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:20.753] Server  LOG     [0ms] Starting fetch for poll 3
+[00:01:20.753] Server  LOG     Fetching poll 3
+[00:01:20.759] Server  LOG     [0ms] Starting fetch for poll 3
+[00:01:20.759] Server  LOG     Fetching poll 3
+[00:01:22.133] Server  LOG     getPollById completed in 6959ms for poll 3 with 4 options
+[00:01:22.133] Server  LOG     [6960ms] Data fetch completed
+[00:01:22.134] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:01:22.428] Server  LOG     Vote check completed in 294ms, found: true
+[00:01:22.731] Server  LOG     [7557ms] Total request completed
+[00:01:22.771] Server  LOG     getPollById completed in 7607ms for poll 3 with 4 options
+[00:01:22.771] Server  LOG     [7608ms] Data fetch completed
+[00:01:22.771] Server  LOG     [7609ms] Total request completed
+[00:01:26.067] Server  LOG     getPollById completed in 5313ms for poll 3 with 4 options
+[00:01:26.068] Server  LOG     [5314ms] Data fetch completed
+[00:01:26.068] Server  LOG     [5315ms] Total request completed
+[00:01:26.996] Server  LOG     getPollById completed in 6237ms for poll 3 with 4 options
+[00:01:26.997] Server  LOG     [6238ms] Data fetch completed
+[00:01:26.997] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:01:27.728] Server  LOG     Vote check completed in 730ms, found: true
+[00:01:28.313] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/contexts/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:28.358] Server  LOG     ✓ Compiled in 27ms
+[00:01:28.452] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:28.468] Server  LOG     [0ms] Starting fetch for poll 3
+[00:01:28.469] Server  LOG     Fetching poll 3
+[00:01:28.476] Server  LOG     [0ms] Starting fetch for poll 3
+[00:01:28.476] Server  LOG     Fetching poll 3
+[00:01:28.510] Server  LOG     [7751ms] Total request completed
+[00:01:31.463] Server  LOG     getPollById completed in 2987ms for poll 3 with 4 options
+[00:01:31.463] Server  LOG     [2988ms] Data fetch completed
+[00:01:31.464] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:01:31.739] Server  LOG     Vote check completed in 275ms, found: true
+[00:01:31.998] Server  LOG     [3522ms] Total request completed
+[00:01:33.287] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/contexts/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:33.331] Server  LOG     ✓ Compiled in 23ms
+[00:01:33.422] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:33.440] Server  LOG     [0ms] Starting fetch for poll 3
+[00:01:33.440] Server  LOG     Fetching poll 3
+[00:01:33.445] Server  LOG     [0ms] Starting fetch for poll 3
+[00:01:33.446] Server  LOG     Fetching poll 3
+[00:01:35.243] Server  LOG     getPollById completed in 6774ms for poll 3 with 4 options
+[00:01:35.243] Server  LOG     [6774ms] Data fetch completed
+[00:01:35.243] Server  LOG     [6775ms] Total request completed
+[00:01:37.125] Server  LOG     getPollById completed in 3680ms for poll 3 with 4 options
+[00:01:37.126] Server  LOG     [3680ms] Data fetch completed
+[00:01:37.126] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:01:37.455] Server  LOG     Vote check completed in 330ms, found: true
+[00:01:37.696] Server  LOG     [4250ms] Total request completed
+[00:01:38.742] Server  LOG     getPollById completed in 5303ms for poll 3 with 4 options
+[00:01:38.743] Server  LOG     [5303ms] Data fetch completed
+[00:01:38.743] Server  LOG     [5304ms] Total request completed
+[00:01:43.619] Server  LOG     ✓ Compiled in 26ms
+[00:01:48.498] Server  LOG     ✓ Compiled in 31ms
+[00:02:01.378] Server  LOG     ✓ Compiled in 44ms
+[00:02:17.160] Server  LOG     ✓ Compiled in 150ms
+[00:02:17.282] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:17.302] Server  LOG     [0ms] Starting fetch for poll 3
+[00:02:17.302] Server  LOG     Fetching poll 3
+[00:02:17.311] Server  LOG     [0ms] Starting fetch for poll 3
+[00:02:17.311] Server  LOG     Fetching poll 3
+[00:02:21.200] Server  LOG     getPollById completed in 3889ms for poll 3 with 4 options
+[00:02:21.200] Server  LOG     [3889ms] Data fetch completed
+[00:02:21.200] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:02:21.471] Server  LOG     Vote check completed in 271ms, found: true
+[00:02:21.724] Server  LOG     [4414ms] Total request completed
+[00:02:23.129] Server  LOG     getPollById completed in 5827ms for poll 3 with 4 options
+[00:02:23.130] Server  LOG     [5827ms] Data fetch completed
+[00:02:23.130] Server  LOG     [5827ms] Total request completed
+[00:02:56.198] Server  LOG     ✓ Compiled in 60ms
+[00:02:57.804] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:02:57.950] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:02:58.837] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:02:59.000] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:59.116] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:04.545] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:04.808] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:04.926] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:08.955] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:09.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:09.156] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:10.300] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:10.409] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:10.436] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:10.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:10.630] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:10.640] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:10.722] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:10.763] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:10.778] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:10.847] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:10.954] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:13.333] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:13.385] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:13.387] Server  LOG     ✓ Compiled in 28ms
+[00:03:13.515] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:13.623] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:14.400] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:14.497] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:14.616] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:14.627] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:14.717] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:14.823] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:14.920] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:14.994] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:15.101] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.126] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.198] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:15.305] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.323] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.391] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:15.427] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.441] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.514] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:15.615] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.626] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.724] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:15.745] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:15.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:15.927] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:17.689] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:17.739] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:17.742] Server  LOG     ✓ Compiled in 33ms
+[00:03:17.865] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:17.975] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:20.061] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:20.142] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:20.248] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:20.273] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:20.349] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:20.460] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:20.471] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:20.582] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:20.689] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:32.468] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:32.514] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:32.516] Server  LOG     ✓ Compiled in 28ms
+[00:03:32.654] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:32.760] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:37.632] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:37.722] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:37.724] Server  LOG     ✓ Compiled in 37ms
+[00:03:37.848] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:37.955] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:40.217] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:40.342] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:40.452] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:40.474] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:40.572] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:40.612] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:40.624] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:40.711] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:40.817] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:48.828] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:48.869] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:03:48.871] Server  LOG     ✓ Compiled in 41ms
+[00:03:48.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:49.086] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:04:02.236] Browser ERROR   ./src/app/layout.tsx:47:10
+Ecmascript file had an error
+  45 |
+  46 | // Wrapper component to access context
+> 47 | function SnowfallWrapper() {
+     |          ^^^^^^^^^^^^^^^
+  48 |   const { snowfallEnabled } = useUser();
+  49 |   return <SnowfallComponent enabled={snowfallEnabled} color="#ffffff" snowflakeCount={150} />;
+  50 | }
+
+the name `SnowfallWrapper` is defined multiple times
+[00:04:08.235] Browser ERROR   ./src/app/layout.tsx:47:10
+Ecmascript file had an error
+  45 |
+  46 | // Wrapper component to access context
+> 47 | function SnowfallWrapper() {
+     |          ^^^^^^^^^^^^^^^
+  48 |   const { snowfallEnabled } = useUser();
+  49 |   return <SnowfallComponent enabled={snowfallEnabled} color="#ffffff" snowflakeCount={150} />;
+  50 | }
+
+the name `SnowfallWrapper` is defined multiple times
+[00:04:13.236] Browser ERROR   ./src/app/layout.tsx:47:10
+Ecmascript file had an error
+  45 |
+  46 | // Wrapper component to access context
+> 47 | function SnowfallWrapper() {
+     |          ^^^^^^^^^^^^^^^
+  48 |   const { snowfallEnabled } = useUser();
+  49 |   return <SnowfallComponent enabled={snowfallEnabled} color="#ffffff" snowflakeCount={150} />;
+  50 | }
+
+the name `SnowfallWrapper` is defined multiple times
+[00:04:19.781] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:04:19.914] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:20.235] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.

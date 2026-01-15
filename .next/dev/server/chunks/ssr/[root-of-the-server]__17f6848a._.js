@@ -27,6 +27,7 @@ function UserProvider({ children }) {
     const [displayName, setDisplayNameState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [isVerified, setIsVerifiedState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [snowfallEnabled, setSnowfallEnabledState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     // 초기 로드 시 localStorage에서 이름과 인증 상태 가져오기
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const storedName = localStorage.getItem(STORAGE_KEY);
@@ -50,18 +51,24 @@ function UserProvider({ children }) {
     const setIsVerified = (verified)=>{
         setIsVerifiedState(verified);
     };
+    // 스노우폴 상태 설정
+    const setSnowfallEnabled = (enabled)=>{
+        setSnowfallEnabledState(enabled);
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UserContext.Provider, {
         value: {
             displayName,
             setDisplayName,
             isVerified,
             setIsVerified,
-            isLoading
+            isLoading,
+            snowfallEnabled,
+            setSnowfallEnabled
         },
         children: children
     }, void 0, false, {
         fileName: "[project]/src/contexts/UserContext.tsx",
-        lineNumber: 53,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
 }

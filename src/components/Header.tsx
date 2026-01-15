@@ -25,7 +25,7 @@ export default function Header({
         <Link href="/" className="heading-primary text-2xl">
           Vote<span className="text-[var(--accent-coral)]">Box</span>
         </Link>
-        <div className="flex items-center gap-4">
+         <div className="flex items-center gap-4">
           {showBackLink && (
             <Link href={backLinkHref} className="nav-link">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

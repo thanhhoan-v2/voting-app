@@ -9,6 +9,8 @@ interface UserContextType {
   isVerified: boolean;
   setIsVerified: (verified: boolean) => void;
   isLoading: boolean;
+  snowfallEnabled: boolean;
+  setSnowfallEnabled: (enabled: boolean) => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -21,6 +23,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
   const [displayName, setDisplayNameState] = useState<string | null>(null);
   const [isVerified, setIsVerifiedState] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [snowfallEnabled, setSnowfallEnabledState] = useState<boolean>(false);
 
   // 초기 로드 시 localStorage에서 이름과 인증 상태 가져오기
   useEffect(() => {
@@ -49,8 +52,13 @@ export function UserProvider({ children }: { children: ReactNode }) {
     setIsVerifiedState(verified);
   };
 
+  // 스노우폴 상태 설정
+  const setSnowfallEnabled = (enabled: boolean) => {
+    setSnowfallEnabledState(enabled);
+  };
+
   return (
-    <UserContext.Provider value={{ displayName, setDisplayName, isVerified, setIsVerified, isLoading }}>
+    <UserContext.Provider value={{ displayName, setDisplayName, isVerified, setIsVerified, isLoading, snowfallEnabled, setSnowfallEnabled }}>
       {children}
     </UserContext.Provider>
   );

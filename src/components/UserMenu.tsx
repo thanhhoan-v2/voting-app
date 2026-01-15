@@ -8,7 +8,7 @@ interface UserMenuProps {
 }
 
 export default function UserMenu({ displayName }: UserMenuProps) {
-  const { setDisplayName } = useUser();
+  const { setDisplayName, snowfallEnabled, setSnowfallEnabled } = useUser();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -58,6 +58,13 @@ export default function UserMenu({ displayName }: UserMenuProps) {
             <p className="text-xs text-[var(--text-muted)]">Signed in as</p>
             <p className="text-sm font-semibold truncate">{displayName}</p>
           </div>
+          <button
+            onClick={() => setSnowfallEnabled(!snowfallEnabled)}
+            className="w-full px-4 py-3 text-left text-sm font-medium text-[var(--text-primary)] hover:bg-[var(--accent-sky)] flex items-center gap-2 transition-colors"
+          >
+            <span className="text-lg">{snowfallEnabled ? '❄️' : '☀️'}</span>
+            {snowfallEnabled ? 'Disable Snowfall' : 'Enable Snowfall'}
+          </button>
           <button
             onClick={handleLogout}
             className="w-full px-4 py-3 text-left text-sm font-medium text-[var(--accent-coral)] hover:bg-red-50 flex items-center gap-2 transition-colors"
