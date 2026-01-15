@@ -39,7 +39,11 @@ function UserProvider({ children }) {
     }, []);
     // 이름 설정 및 localStorage에 저장
     const setDisplayName = (name)=>{
-        localStorage.setItem(STORAGE_KEY, name);
+        if (name) {
+            localStorage.setItem(STORAGE_KEY, name);
+        } else {
+            localStorage.removeItem(STORAGE_KEY);
+        }
         setDisplayNameState(name);
     };
     // 인증 상태 설정
@@ -57,7 +61,7 @@ function UserProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/contexts/UserContext.tsx",
-        lineNumber: 49,
+        lineNumber: 53,
         columnNumber: 5
     }, this);
 }

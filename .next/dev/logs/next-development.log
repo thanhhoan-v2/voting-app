@@ -1241,3 +1241,19 @@
 [00:10:43.851] Server  LOG     getPollById completed in 6697ms for poll 3 with 1 options
 [00:10:43.851] Server  LOG     [6697ms] Data fetch completed
 [00:10:43.851] Server  LOG     [6698ms] Total request completed
+[00:24:35.546] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/contexts/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:24:35.562] Server  LOG     ✓ Compiled in 26ms
+[00:24:35.876] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:35.903] Server  LOG     [0ms] Starting fetch for poll 3
+[00:24:35.904] Server  LOG     Fetching poll 3
+[00:24:35.942] Server  LOG     [0ms] Starting fetch for poll 3
+[00:24:35.943] Server  LOG     Fetching poll 3
+[00:24:41.389] Server  LOG     getPollById completed in 5485ms for poll 3 with 1 options
+[00:24:41.389] Server  LOG     [5486ms] Data fetch completed
+[00:24:41.389] Server  LOG     [5486ms] Total request completed
+[00:24:42.828] Server  LOG     getPollById completed in 6885ms for poll 3 with 1 options
+[00:24:42.829] Server  LOG     [6886ms] Data fetch completed
+[00:24:42.829] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:24:43.560] Server  LOG     Vote check completed in 731ms, found: false
+[00:24:43.560] Server  LOG     [732ms] Vote check completed
+[00:24:43.561] Server  LOG     [7619ms] Total request completed
