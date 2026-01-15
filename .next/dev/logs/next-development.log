@@ -43,3 +43,9 @@
 [00:03:12.008] Server  LOG     Existing vote result: []
 [00:03:12.009] Server  LOG     Inserting new vote...
 [00:03:13.019] Server  LOG     Vote recorded for poll: 3 "option:" 6 "by:" "hoan_thanh"
+[00:03:43.568] Server  LOG     Option added: {}
+[00:04:33.864] Server  LOG     ✓ Compiled in 63ms
+[00:04:42.367] Server  LOG     ✓ Compiled in 62ms
+[00:04:56.873] Server  LOG     ✓ Compiled in 61ms
+[00:05:11.842] Server  LOG     ✓ Compiled in 36ms
+[00:05:24.838] Server  LOG     ✓ Compiled in 31ms

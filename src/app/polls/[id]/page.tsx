@@ -344,12 +344,18 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
   const convertToEmbedUrl = (url: string) => {
     if (!url) return '';
     
-    // Google Maps URL에서 좌표 추출
-    const match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
-    if (match) {
-      const [, lat, lng] = match;
-      // OpenStreetMap 사용 (더 간단한 임베딩)
-      return `https://www.openstreetmap.org/export/embed.html?bbox=${parseFloat(lng)-0.01},${parseFloat(lat)-0.01},${parseFloat(lng)+0.01},${parseFloat(lat)+0.01}&layer=mapnik&marker=${lat},${lng}`;
+    // Google Maps URL에서 좌표 추출 (@lat,lng 형식)
+    const coordMatch = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (coordMatch) {
+      const [, lat, lng] = coordMatch;
+      return `https://maps.google.com/maps?q=${lat},${lng}&output=embed`;
+    }
+    
+    // Google Maps URL에서 좌표 추출 (!3dlat!4dlng 형식)
+    const threeDFourDMatch = url.match(/!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/);
+    if (threeDFourDMatch) {
+      const [, lat, lng] = threeDFourDMatch;
+      return `https://maps.google.com/maps?q=${lat},${lng}&output=embed`;
     }
     
     // 이미 embed URL이면 그대로 반환
@@ -357,21 +363,24 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
       return url;
     }
     
-    // Google Maps 좌표가 있는지 확인
-    const coordMatch = url.match(/!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/);
-    if (coordMatch) {
-      const [, lat, lng] = coordMatch;
-      return `https://www.openstreetmap.org/export/embed.html?bbox=${parseFloat(lng)-0.01},${parseFloat(lat)-0.01},${parseFloat(lng)+0.01},${parseFloat(lat)+0.01}&layer=mapnik&marker=${lat},${lng}`;
+    // place ID가 있는 경우
+    const placeMatch = url.match(/place\/([^\/]+)/);
+    if (placeMatch) {
+      return `https://maps.google.com/maps/place/${placeMatch[1]}/output=embed`;
     }
     
-    // 기본적으로 OpenStreetMap으로 시도
-    return `https://www.openstreetmap.org/export/embed.html?bbox=-0.01,-0.01,0.01,0.01&layer=mapnik`;
+    // 기본 URL을 embed 형식으로 변환
+    if (url.includes('maps.google.com')) {
+      return url + (url.includes('?') ? '&' : '?') + 'output=embed';
+    }
+    
+    return url;
   };
 
   // Google Maps URL 유효성 검사
   const isValidMapUrl = (url: string) => {
     if (!url) return true; // 빈 값은 허용
-    return url.includes('maps.google.com') || url.includes('google.com/maps') || url.includes('openstreetmap.org');
+    return url.includes('maps.google.com') || url.includes('google.com/maps');
   };
 
   // 시간 포맷
@@ -521,17 +530,34 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                      {/* 지도 URL이 있으면 표시 */}
                      {option.map_url && isValidMapUrl(option.map_url) && (
                        <div className="mb-3">
-                         <iframe
-                           src={convertToEmbedUrl(option.map_url)}
-                           width="100%"
-                           height="200"
-                           style={{ border: 0 }}
-                           allowFullScreen
-                           loading="lazy"
-                           referrerPolicy="no-referrer-when-downgrade"
-                           className="rounded-lg border-2 border-[var(--border-color)]"
-                           title="Map Location"
-                         />
+                         <div className="relative">
+                           <iframe
+                             src={convertToEmbedUrl(option.map_url)}
+                             width="100%"
+                             height="200"
+                             style={{ border: 0 }}
+                             allowFullScreen
+                             loading="lazy"
+                             className="rounded-lg border-2 border-[var(--border-color)]"
+                             title="Map Location"
+                             onError={(e) => {
+                               console.error('Map iframe failed to load:', e);
+                               e.currentTarget.style.display = 'none';
+                               e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                             }}
+                           />
+                           <div className="hidden p-3 bg-yellow-100 border-2 border-yellow-300 rounded-lg text-sm">
+                             <p className="font-medium mb-1">📍 Map Available</p>
+                             <a 
+                               href={option.map_url} 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               className="text-blue-600 underline hover:text-blue-800"
+                             >
+                               Open location in new tab →
+                             </a>
+                           </div>
+                         </div>
                          <p className="text-xs text-[var(--text-muted)] mt-1">
                            📍 Location added
                          </p>
@@ -616,12 +642,18 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                     type="url"
                     value={newOptionMapUrl}
                     onChange={(e) => setNewOptionMapUrl(e.target.value)}
-                    placeholder="Paste Google Maps share link (optional)..."
+                    placeholder="https://maps.google.com/..."
                     className="input-field mb-4"
                   />
-                  <p className="text-xs text-[var(--text-muted)] mb-4">
-                    📍 Paste any Google Maps link - we'll convert it to an interactive map
-                  </p>
+                  <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-3 mb-4">
+                    <p className="text-xs font-medium text-blue-800 mb-1">🗺️ How to add a map:</p>
+                    <ol className="text-xs text-blue-700 space-y-1 list-decimal list-inside">
+                      <li>Go to Google Maps and find your location</li>
+                      <li>Click "Share" button</li>
+                      <li>Copy the link that appears</li>
+                      <li>Paste it here (works with any Google Maps URL)</li>
+                    </ol>
+                  </div>
 
                   {newOptionImage ? (
                   <div className="image-preview mb-4">
@@ -697,17 +729,34 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                 {voteInfo.map_url && isValidMapUrl(voteInfo.map_url) && (
                   <div className="mb-4">
                     <p className="text-sm text-[var(--text-muted)] mb-2">Your voted location:</p>
-                    <iframe
-                      src={convertToEmbedUrl(voteInfo.map_url)}
-                      width="100%"
-                      height="150"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-lg border-2 border-[var(--border-color)]"
-                      title="Voted Location"
-                    />
+                    <div className="relative">
+                      <iframe
+                        src={convertToEmbedUrl(voteInfo.map_url)}
+                        width="100%"
+                        height="150"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        className="rounded-lg border-2 border-[var(--border-color)]"
+                        title="Voted Location"
+                        onError={(e) => {
+                          console.error('Vote map iframe failed to load:', e);
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="hidden p-3 bg-yellow-100 border-2 border-yellow-300 rounded-lg text-sm">
+                        <p className="font-medium mb-1">📍 Map Available</p>
+                        <a 
+                          href={voteInfo.map_url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-blue-600 underline hover:text-blue-800"
+                        >
+                          Open location in new tab →
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 )}
                 
