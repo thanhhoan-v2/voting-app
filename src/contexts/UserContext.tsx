@@ -5,7 +5,7 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 // 사용자 컨텍스트 타입 정의
 interface UserContextType {
   displayName: string | null;
-  setDisplayName: (name: string) => void;
+  setDisplayName: (name: string | null) => void;
   isVerified: boolean;
   setIsVerified: (verified: boolean) => void;
   isLoading: boolean;
@@ -35,8 +35,12 @@ export function UserProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // 이름 설정 및 localStorage에 저장
-  const setDisplayName = (name: string) => {
-    localStorage.setItem(STORAGE_KEY, name);
+  const setDisplayName = (name: string | null) => {
+    if (name) {
+      localStorage.setItem(STORAGE_KEY, name);
+    } else {
+      localStorage.removeItem(STORAGE_KEY);
+    }
     setDisplayNameState(name);
   };
 
