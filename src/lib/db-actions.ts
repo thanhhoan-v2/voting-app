@@ -32,6 +32,7 @@ export async function createTables() {
         poll_id INTEGER REFERENCES polls(id) ON DELETE CASCADE,
         option_text VARCHAR(200) NOT NULL,
         image_url TEXT,
+        map_url TEXT,
         added_by_name VARCHAR(100),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
@@ -73,6 +74,10 @@ export async function createTables() {
 
     await sql`
       ALTER TABLE poll_options ADD COLUMN IF NOT EXISTS added_by_name VARCHAR(100)
+    `;
+
+    await sql`
+      ALTER TABLE poll_options ADD COLUMN IF NOT EXISTS map_url TEXT
     `;
 
     await sql`
@@ -283,11 +288,11 @@ export async function hasUserVoted(pollId: number, displayName: string) {
 }
 
 // 폴 옵션 추가
-export async function addPollOption(pollId: number, optionText: string, imageUrl: string | null, addedByName: string) {
+export async function addPollOption(pollId: number, optionText: string, imageUrl: string | null, mapUrl: string | null, addedByName: string) {
   try {
     const [option] = await sql`
-      INSERT INTO poll_options (poll_id, option_text, image_url, added_by_name)
-      VALUES (${pollId}, ${optionText}, ${imageUrl}, ${addedByName})
+      INSERT INTO poll_options (poll_id, option_text, image_url, map_url, added_by_name)
+      VALUES (${pollId}, ${optionText}, ${imageUrl}, ${mapUrl}, ${addedByName})
       RETURNING *
     `;
     console.log('Option added:', option);
@@ -355,6 +360,39 @@ export async function deleteVote(pollId: number, displayName: string) {
     return deletedVote;
   } catch (error) {
     console.error('Error deleting vote:', error);
+    throw error;
+  }
+}
+
+// Get vote information including timestamp
+export async function getUserVoteInfo(pollId: number, displayName: string) {
+  try {
+    const [vote] = await sql`
+      SELECT v.*, po.option_text, po.image_url, po.map_url
+      FROM votes v
+      JOIN poll_options po ON v.option_id = po.id
+      WHERE v.poll_id = ${pollId} AND v.display_name = ${displayName}
+    `;
+    return vote || null;
+  } catch (error) {
+    console.error('Error getting vote info:', error);
+    throw error;
+  }
+}
+
+// Get all votes for a poll with timestamps
+export async function getPollVotes(pollId: number) {
+  try {
+    const votes = await sql`
+      SELECT v.display_name, v.option_id, v.created_at, po.option_text, po.image_url, po.map_url
+      FROM votes v
+      JOIN poll_options po ON v.option_id = po.id
+      WHERE v.poll_id = ${pollId}
+      ORDER BY v.created_at DESC
+    `;
+    return votes;
+  } catch (error) {
+    console.error('Error getting poll votes:', error);
     throw error;
   }
 }

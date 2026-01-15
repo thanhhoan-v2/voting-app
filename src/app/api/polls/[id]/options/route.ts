@@ -8,7 +8,7 @@ export async function POST(
 ) {
   try {
     const resolvedParams = await params;
-    const { optionText, imageUrl, displayName } = await request.json();
+    const { optionText, imageUrl, mapUrl, displayName } = await request.json();
 
     if (!optionText) {
       return NextResponse.json(
@@ -28,6 +28,7 @@ export async function POST(
       parseInt(resolvedParams.id),
       optionText,
       imageUrl || null,
+      mapUrl || null,
       displayName
     );
     return NextResponse.json(option, { status: 201 });

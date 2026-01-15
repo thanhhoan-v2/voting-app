@@ -1257,3 +1257,17 @@
 [00:24:43.560] Server  LOG     Vote check completed in 731ms, found: false
 [00:24:43.560] Server  LOG     [732ms] Vote check completed
 [00:24:43.561] Server  LOG     [7619ms] Total request completed
+[00:25:26.436] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:26.481] Server  LOG     [0ms] Starting fetch for poll 3
+[00:25:26.481] Server  LOG     Fetching poll 3
+[00:25:26.492] Server  LOG     [0ms] Starting fetch for poll 3
+[00:25:26.492] Server  LOG     Fetching poll 3
+[00:25:29.763] Server  LOG     getPollById completed in 3270ms for poll 3 with 1 options
+[00:25:29.765] Server  LOG     [3272ms] Data fetch completed
+[00:25:29.765] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:25:30.046] Server  LOG     Vote check completed in 281ms, found: false
+[00:25:30.046] Server  LOG     [282ms] Vote check completed
+[00:25:30.047] Server  LOG     [3555ms] Total request completed
+[00:25:33.468] Server  LOG     getPollById completed in 6988ms for poll 3 with 1 options
+[00:25:33.469] Server  LOG     [6988ms] Data fetch completed
+[00:25:33.470] Server  LOG     [6993ms] Total request completed

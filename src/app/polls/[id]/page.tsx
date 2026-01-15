@@ -10,6 +10,7 @@ interface PollOption {
   option_text: string;
   vote_count: number;
   image_url?: string;
+  map_url?: string;
   added_by_name?: string;
 }
 
@@ -38,11 +39,13 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
   const [loading, setLoading] = useState(true);
   const [hasVoted, setHasVoted] = useState(false);
   const [votedOptionId, setVotedOptionId] = useState<number | null>(null);
+  const [voteInfo, setVoteInfo] = useState<any>(null);
 
   // 새 옵션 추가 상태
   const [showAddOption, setShowAddOption] = useState(false);
   const [newOptionText, setNewOptionText] = useState('');
   const [newOptionImage, setNewOptionImage] = useState('');
+  const [newOptionMapUrl, setNewOptionMapUrl] = useState('');
   const optionFileRef = useRef<HTMLInputElement>(null);
 
   // 댓글 상태
@@ -67,6 +70,7 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
       setComments(data.comments || []);
       setHasVoted(data.hasVoted);
       setVotedOptionId(data.votedOptionId);
+      setVoteInfo(data.voteInfo);
     } catch (error) {
       console.error('Error fetching poll:', error);
     } finally {
@@ -179,6 +183,7 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
       option_text: newOptionText,
       vote_count: 0,
       image_url: newOptionImage || undefined,
+      map_url: newOptionMapUrl || undefined,
       added_by_name: displayName,
     };
 
@@ -186,11 +191,13 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
     const prevPoll = poll;
     const savedText = newOptionText;
     const savedImage = newOptionImage;
+    const savedMapUrl = newOptionMapUrl;
 
     // 즉시 UI 업데이트
     setPoll({ ...poll, options: [...poll.options, optimisticOption] });
     setNewOptionText('');
     setNewOptionImage('');
+    setNewOptionMapUrl('');
     setShowAddOption(false);
 
     // 백그라운드에서 API 호출
@@ -201,6 +208,7 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
         body: JSON.stringify({
           optionText: savedText,
           imageUrl: savedImage || null,
+          mapUrl: savedMapUrl || null,
           displayName
         }),
       });
@@ -217,6 +225,7 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
         setPoll(prevPoll);
         setNewOptionText(savedText);
         setNewOptionImage(savedImage);
+        setNewOptionMapUrl(savedMapUrl);
         setShowAddOption(true);
         alert('Error adding option');
       }
@@ -225,6 +234,7 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
       setPoll(prevPoll);
       setNewOptionText(savedText);
       setNewOptionImage(savedImage);
+      setNewOptionMapUrl(savedMapUrl);
       setShowAddOption(true);
       alert('Error adding option');
     }
@@ -458,15 +468,31 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                     />
                   )}
 
-                  <div className="relative z-10">
-                    {/* 이미지가 있으면 표시 */}
-                    {option.image_url && (
-                      <img
-                        src={option.image_url}
-                        alt={option.option_text}
-                        className="vote-option-image"
-                      />
-                    )}
+                   <div className="relative z-10">
+                     {/* 이미지가 있으면 표시 */}
+                     {option.image_url && (
+                       <img
+                         src={option.image_url}
+                         alt={option.option_text}
+                         className="vote-option-image"
+                       />
+                     )}
+
+                     {/* 지도 URL이 있으면 표시 */}
+                     {option.map_url && (
+                       <div className="mb-3">
+                         <iframe
+                           src={option.map_url}
+                           width="100%"
+                           height="200"
+                           style={{ border: 0 }}
+                           allowFullScreen
+                           loading="lazy"
+                           referrerPolicy="no-referrer-when-downgrade"
+                           className="rounded-lg border-2 border-[var(--border-color)]"
+                         />
+                       </div>
+                     )}
 
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-3">
@@ -533,16 +559,24 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
             ) : (
               <form onSubmit={handleAddOption} className="card-static card-lavender p-6">
                 <h3 className="heading-secondary text-lg mb-4">Add New Option</h3>
-                <input
-                  type="text"
-                  value={newOptionText}
-                  onChange={(e) => setNewOptionText(e.target.value)}
-                  placeholder="Enter option text..."
-                  className="input-field mb-4"
-                  required
-                />
+                  <input
+                    type="text"
+                    value={newOptionText}
+                    onChange={(e) => setNewOptionText(e.target.value)}
+                    placeholder="Enter option text..."
+                    className="input-field mb-4"
+                    required
+                  />
 
-                {newOptionImage ? (
+                  <input
+                    type="url"
+                    value={newOptionMapUrl}
+                    onChange={(e) => setNewOptionMapUrl(e.target.value)}
+                    placeholder="Add Google Maps URL (optional)..."
+                    className="input-field mb-4"
+                  />
+
+                  {newOptionImage ? (
                   <div className="image-preview mb-4">
                     <img src={newOptionImage} alt="Preview" />
                     <button
@@ -600,17 +634,41 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
         </div>
 
         {/* 투표 완료 메시지 */}
-        {hasVoted && (
+        {hasVoted && voteInfo && (
           <div className="card-static card-mint p-6 mb-8 animate-scale-in">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white border-2 border-[var(--border-color)] rounded-full flex items-center justify-center">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-white border-2 border-[var(--border-color)] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-6 h-6 text-[var(--success)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <div>
+              <div className="flex-1">
                 <h3 className="heading-secondary text-lg">Vote submitted!</h3>
-                <p className="text-body text-sm">Your vote has been recorded as {displayName}. You can change your vote anytime.</p>
+                <p className="text-body text-sm mb-2">You voted for: <span className="font-semibold">{voteInfo.option_text}</span></p>
+                
+                {/* 투표한 옵션의 지도가 있으면 표시 */}
+                {voteInfo.map_url && (
+                  <div className="mb-4">
+                    <p className="text-sm text-[var(--text-muted)] mb-2">Location:</p>
+                    <iframe
+                      src={voteInfo.map_url}
+                      width="100%"
+                      height="150"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="rounded-lg border-2 border-[var(--border-color)]"
+                    />
+                  </div>
+                )}
+                
+                <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Voted {formatTime(voteInfo.created_at)}
+                </div>
               </div>
             </div>
           </div>

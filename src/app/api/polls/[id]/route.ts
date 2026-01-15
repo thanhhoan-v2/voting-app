@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getPollById, hasUserVoted, getComments } from '@/lib/db-actions';
+import { getPollById, hasUserVoted, getComments, getUserVoteInfo } from '@/lib/db-actions';
 
 export async function GET(
   request: NextRequest,
@@ -28,12 +28,12 @@ export async function GET(
       return NextResponse.json({ error: 'Poll not found' }, { status: 404 });
     }
 
-    // Check vote status only if displayName is provided
+    // Check vote status and get vote info only if displayName is provided
     let votedOptionId = null;
+    let voteInfo = null;
     if (displayName) {
-      const voteStartTime = Date.now();
       votedOptionId = await hasUserVoted(pollId, displayName);
-      console.log(`[${Date.now() - voteStartTime}ms] Vote check completed`);
+      voteInfo = await getUserVoteInfo(pollId, displayName);
     }
 
     const totalTime = Date.now() - startTime;
@@ -43,6 +43,7 @@ export async function GET(
       poll,
       hasVoted: votedOptionId !== null,
       votedOptionId,
+      voteInfo,
       comments
     });
   } catch (error) {
