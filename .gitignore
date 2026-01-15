@@ -9,6 +9,7 @@ node_modules/
 # Next.js
 /.next/
 /out/
+.next/cache/
 
 # Production
 /build
@@ -31,3 +32,11 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large files and binaries
+*.node
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib
