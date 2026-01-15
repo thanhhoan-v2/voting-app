@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/adrian-phan.team-mint.io/personal-projects/voting-app/src/app/polls/%5Bid%5D/loading.tsx"],"sourcesContent":["export default function Loading() {\n  return (\n    <div className=\"min-h-screen bg-gradient-warm\">\n      <div className=\"flex items-center justify-center min-h-screen\">\n        <div className=\"card-static p-12 text-center\">\n          <div className=\"spinner mx-auto mb-4\" />\n          <p className=\"text-body text-lg\">Loading...</p>\n        </div>\n      </div>\n    </div>\n  );\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAI,WAAU;sBACb,cAAA,8OAAC;gBAAI,WAAU;;kCACb,8OAAC;wBAAI,WAAU;;;;;;kCACf,8OAAC;wBAAE,WAAU;kCAAoB;;;;;;;;;;;;;;;;;;;;;;AAK3C"}}]
+}

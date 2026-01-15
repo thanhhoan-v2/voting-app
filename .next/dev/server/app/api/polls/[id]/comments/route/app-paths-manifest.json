@@ -1,0 +1,3 @@
+{
+  "/api/polls/[id]/comments/route": "app/api/polls/[id]/comments/route.js"
+}

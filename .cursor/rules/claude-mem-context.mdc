@@ -1,0 +1,159 @@
+---
+alwaysApply: true
+description: "Claude-mem context from past sessions (auto-updated)"
+---
+
+# Memory Context from Past Sessions
+
+The following context is from claude-mem, a persistent memory system that tracks your coding sessions.
+
+# [voting-app] recent context
+
+**Legend:** 🎯 session-request | 🔴 bugfix | 🟣 feature | 🔄 refactor | ✅ change | 🔵 discovery | ⚖️  decision
+
+💡 **Column Key**:
+- **Read**: Tokens to read this observation (cost to learn it now)
+- **Work**: Tokens spent on work that produced this record (🔍 research, 🛠️ building, ⚖️  deciding)
+
+💡 **Context Index:** This semantic index (titles, types, files, tokens) is usually sufficient to understand past work.
+
+When you need implementation details, rationale, or debugging context:
+- Use the mem-search skill to fetch full observations on-demand
+- Critical types (🔴 bugfix, ⚖️ decision) often need detailed fetching
+- Trust this index over re-reading code for past decisions and learnings
+
+📊 **Context Economics**:
+- Loading: 20 observations (4,687 tokens to read)
+- Work investment: 213,049 tokens spent on research, building, and decisions
+- Your savings: 208,362 tokens (98% reduction from reuse)
+
+### Jan 15, 2026
+
+**🎯 #S656** Verify voting app functionality after implementing Neo-Brutalist UI design and database schema updates (Jan 15 at 1:07 PM) [→](claude-mem://session-summary/656)
+
+**🎯 #S655** Frontend design for voting app - implementing Neo-Brutalist aesthetic with display name-based voting, image uploads, comments, and dynamic poll options. (Jan 15 at 1:07 PM) [→](claude-mem://session-summary/655)
+
+**🎯 #S657** Fix broken Tailwind CSS classes in voting-app project (Jan 15 at 1:07 PM) [→](claude-mem://session-summary/657)
+
+**🎯 #S660** Fix "Failed to vote" error in voting application (Jan 15 at 1:10 PM) [→](claude-mem://session-summary/660)
+
+**🎯 #S662** Diagnose and fix "Failed to vote" error in voting app API (Jan 15 at 1:13 PM) [→](claude-mem://session-summary/662)
+
+**🎯 #S665** Enable user re-voting capability on polls - allow users to change their vote after initial submission (Jan 15 at 1:19 PM) [→](claude-mem://session-summary/665)
+
+**General**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5129 | 1:29 PM | 🔵 | Home Page Creates Database Tables on Load | ~289 | 🔍 2,512 |
+
+**src/components/Header.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5130 | 1:29 PM | 🟣 | Create Reusable Header Component | ~364 | 🛠️ 1,633 |
+
+**src/app/polls/[id]/page.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5131 | 1:29 PM | ✅ | Replace UserMenu Import with Header Component Import | ~247 | 🛠️ 10,567 |
+| #5132 | ″ | 🔄 | Replace Inline Header with Reusable Header Component | ~246 | 🛠️ 11,447 |
+
+**General**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5133 | 1:29 PM | 🔵 | Polls List Page Has Inline Header Similar to Poll Detail Page | ~283 | 🔍 2,079 |
+
+**src/components/Header.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5134 | 1:29 PM | 🟣 | Extend Header Component with New Poll Button Option | ~316 | 🛠️ 4,398 |
+
+**src/app/polls/page.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5135 | 1:29 PM | 🔄 | Replace Polls Page Inline Header with Header Component | ~267 | 🛠️ 4,808 |
+
+**🎯 #S669** Implement instant client-side voting and comment creation to eliminate perceived slowness in the voting app (Jan 15 at 1:30 PM)
+
+**src/app/polls/[id]/page.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5136 | 1:31 PM | 🟣 | Optimistic comment submission UI implemented | ~235 | 🛠️ 10,586 |
+
+**src/components/UserMenu.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5137 | 1:31 PM | 🟣 | UserMenu component created with logout functionality | ~225 | 🛠️ 10,586 |
+
+**src/components/Header.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5138 | 1:31 PM | 🔄 | Header component extracted to shared location | ~240 | 🛠️ 10,586 |
+
+**src/app/polls/[id]/page.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5139 | 1:31 PM | ✅ | Poll detail page updated to use Header component | ~173 | 🛠️ 10,586 |
+
+**src/app/polls/page.tsx**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5140 | 1:31 PM | ✅ | Polls list page updated to use Header component | ~165 | 🛠️ 10,586 |
+
+**General**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+| #5141 | 1:31 PM | 🔵 | API polls endpoint returns poll data successfully | ~222 | 🔍 2,101 |
+| #5142 | ″ | 🔵 | Comments API endpoint now returns created comment data | ~264 | 🔍 908 |
+| #5143 | ″ | 🔵 | Browser automation environment initialized | ~157 | 🔍 790 |
+
+**#5144** ″ 🔵 **Polls page renders with Header component and user setup flow**
+
+The polls list page is fully functional with the new Header component properly displayed. Users are presented with a name entry modal before viewing or interacting with polls. The header shows the VoteBox branding and a "New Poll" button for creating new polls. The page successfully fetches and displays the available poll with vote counts and creator information. The layout combines the user setup flow with the main polls listing.
+
+Read: ~288, Work: 🔍 1,993
+
+**General**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+
+**#5145** 1:31 PM 🔵 **Browser element reference validation error during typing action**
+
+A browser automation error occurred when attempting to type a user name into the input field. The element reference validation failed, suggesting the element selector may not have matched an element on the page or the element reference was not properly established. This could indicate a timing issue or selector mismatch in the browser automation setup.
+
+Read: ~194, Work: 🔍 1,155
+
+**General**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+
+**#5146** 1:31 PM 🔵 **Browser input field populated with test user name via JavaScript evaluation**
+
+The user name input field was populated with "TestUser" using direct JavaScript evaluation on the page. This allows bypassing browser automation API limitations and directly setting the input value in the DOM. The input field now contains the test user name and is ready for form submission.
+
+Read: ~174, Work: 🔍 780
+
+**General**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+
+**#5147** 1:31 PM 🔵 **Let's Go button clicked via JavaScript evaluation**
+
+The "Let's Go!" button was clicked using JavaScript evaluation to submit the user name "TestUser". This allows proceeding past the name entry modal to access the polls page content.
+
+Read: ~115, Work: 🔍 383
+
+**General**
+| ID | Time | T | Title | Read | Work |
+|----|------|---|-------|------|------|
+
+**#5148** 1:32 PM 🔵 **Header component imported and rendered on polls list page**
+
+The Header component is now successfully integrated and rendering on the polls list page. The component displays the VoteBox logo, "New Poll" button, and is configured to show the user menu when a user is logged in. The page renders correctly in the browser with all styling and functionality in place.
+
+Read: ~223, Work: 🔍 114,565
+
+
+💰 Access 213k tokens of past research & decisions for just 4,687t. Use the mem-search skill to access memories by ID instead of re-reading files.
+
+---
+*Updated after last session. Use claude-mem's MCP search tools for more detailed queries.*

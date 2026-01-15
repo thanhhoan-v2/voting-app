@@ -1,0 +1,774 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* Tailwind v4 커스텀 유틸리티 - 보더 */
+@utility border-3 {
+  border-width: 3px;
+}
+
+@utility border-b-3 {
+  border-bottom-width: 3px;
+}
+
+/* Tailwind v4 커스텀 유틸리티 - 애니메이션 */
+@utility animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@utility animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@utility animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+/* Tailwind v4 커스텀 유틸리티 - 딜레이 */
+@utility delay-100 {
+  animation-delay: 100ms;
+}
+
+@utility delay-200 {
+  animation-delay: 200ms;
+}
+
+@utility delay-300 {
+  animation-delay: 300ms;
+}
+
+@utility delay-400 {
+  animation-delay: 400ms;
+}
+
+@utility delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Tailwind v4 커스텀 유틸리티 - 배경 */
+@utility bg-gradient-warm {
+  background: linear-gradient(135deg, #FFFDF7 0%, #FFF8E7 50%, #FFF0F0 100%);
+}
+
+/* Tailwind v4 커스텀 유틸리티 - 그림자 */
+@utility shadow-brutal {
+  box-shadow: 4px 4px 0 #1A1A1A;
+}
+
+@utility shadow-brutal-lg {
+  box-shadow: 6px 6px 0 #1A1A1A;
+}
+
+/* Neo-Brutalist 컬러 팔레트 */
+:root {
+  --bg-primary: #FFFDF7;
+  --bg-secondary: #FFF8E7;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-muted: #7A7A7A;
+
+  --accent-yellow: #FFE156;
+  --accent-coral: #FF6B6B;
+  --accent-mint: #6FEDD6;
+  --accent-lavender: #C4B5FD;
+  --accent-sky: #7DD3FC;
+
+  --border-color: #1A1A1A;
+  --shadow-color: #1A1A1A;
+
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes pulse-shadow {
+  0%, 100% { box-shadow: 6px 6px 0 var(--shadow-color); }
+  50% { box-shadow: 4px 4px 0 var(--shadow-color); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 타이포그래피 */
+.heading-primary {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.heading-secondary {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Neo-Brutalist 버튼 */
+.btn-primary {
+  background: var(--accent-yellow);
+  color: var(--text-primary);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--text-primary);
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-secondary);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.btn-secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+.btn-coral {
+  background: var(--accent-coral);
+  color: white;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-coral:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.btn-mint {
+  background: var(--accent-mint);
+  color: var(--text-primary);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.btn-mint:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-width: 2px;
+  box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.btn-small:hover {
+  box-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+/* Neo-Brutalist 카드 */
+.card {
+  background: white;
+  border: 3px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 var(--shadow-color);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--shadow-color);
+}
+
+.card-static {
+  background: white;
+  border: 3px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.card-yellow {
+  background: var(--accent-yellow);
+}
+
+.card-mint {
+  background: var(--accent-mint);
+}
+
+.card-lavender {
+  background: var(--accent-lavender);
+}
+
+.card-coral {
+  background: var(--accent-coral);
+  color: white;
+}
+
+/* 입력 필드 */
+.input-field {
+  width: 100%;
+  padding: 14px 18px;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  background: white;
+  box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.input-field:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--shadow-color);
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.textarea-field {
+  width: 100%;
+  padding: 14px 18px;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  background: white;
+  resize: vertical;
+  min-height: 100px;
+  box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.textarea-field:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--shadow-color);
+}
+
+/* 투표 옵션 */
+.vote-option {
+  background: white;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.vote-option:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+  background: var(--bg-secondary);
+}
+
+.vote-option.selected {
+  background: var(--accent-yellow);
+  animation: pulse-shadow 1s ease-in-out infinite;
+}
+
+.vote-option.voted {
+  background: var(--accent-mint);
+}
+
+.vote-option-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  margin-bottom: 12px;
+}
+
+/* 투표 결과 바 */
+.vote-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--accent-yellow);
+  opacity: 0.3;
+  transition: width 0.5s ease-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 배지 */
+.vote-badge {
+  background: var(--text-primary);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Syne', sans-serif;
+}
+
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Syne', sans-serif;
+  border: 2px solid var(--border-color);
+}
+
+.status-live {
+  background: var(--accent-mint);
+  color: var(--text-primary);
+}
+
+.status-closed {
+  background: #E5E5E5;
+  color: var(--text-secondary);
+}
+
+/* 다이얼로그 오버레이 */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease-out;
+  padding: 20px;
+}
+
+.dialog-overlay.dialog-closing {
+  animation: fadeIn 0.3s ease-out reverse forwards;
+}
+
+.dialog-container {
+  position: relative;
+  animation: slideUp 0.4s ease-out;
+}
+
+.dialog-container.dialog-content-closing {
+  animation: slideUp 0.3s ease-out reverse forwards;
+}
+
+.dialog-decoration {
+  position: absolute;
+  border: 3px solid var(--border-color);
+  border-radius: 50%;
+}
+
+.dialog-decoration-1 {
+  width: 60px;
+  height: 60px;
+  background: var(--accent-coral);
+  top: -30px;
+  left: -20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.dialog-decoration-2 {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-mint);
+  top: 20px;
+  right: -25px;
+  animation: float 2.5s ease-in-out infinite 0.5s;
+}
+
+.dialog-decoration-3 {
+  width: 30px;
+  height: 30px;
+  background: var(--accent-lavender);
+  bottom: 40px;
+  left: -15px;
+  animation: float 3.5s ease-in-out infinite 1s;
+}
+
+.dialog-content {
+  background: white;
+  border: 3px solid var(--border-color);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 8px 8px 0 var(--shadow-color);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.dialog-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--accent-yellow);
+  border: 3px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.dialog-icon svg {
+  color: var(--text-primary);
+}
+
+.dialog-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.dialog-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+
+.dialog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dialog-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  transition: all 0.2s ease;
+  background: white;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.dialog-input:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.dialog-input::placeholder {
+  color: var(--text-muted);
+}
+
+.dialog-button {
+  background: var(--accent-coral);
+  color: white;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 28px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dialog-button:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.dialog-button:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+.dialog-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dialog-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+
+/* 댓글 섹션 */
+.comment-card {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-lavender);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.comment-image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  margin-top: 12px;
+}
+
+/* 이미지 업로드 */
+.image-upload-zone {
+  border: 3px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--bg-secondary);
+}
+
+.image-upload-zone:hover {
+  background: var(--accent-yellow);
+  border-style: solid;
+}
+
+.image-preview {
+  position: relative;
+  display: inline-block;
+}
+
+.image-preview img {
+  max-width: 200px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 3px solid var(--border-color);
+  box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.image-preview-remove {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 28px;
+  height: 28px;
+  background: var(--accent-coral);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: all 0.15s ease;
+}
+
+.image-preview-remove:hover {
+  transform: scale(1.1);
+}
+
+/* 로딩 스피너 */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--accent-yellow);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* 네비게이션 */
+.nav-link {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link:hover {
+  background: var(--accent-yellow);
+}
+
+/* 배경 패턴 */
+.bg-pattern {
+  background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(circle at 25px 25px, var(--border-color) 2px, transparent 0),
+    radial-gradient(circle at 75px 75px, var(--border-color) 2px, transparent 0);
+  background-size: 100px 100px;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-left: 2px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-yellow);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-coral);
+}
+
+/* 반응형 */
+@media (max-width: 640px) {
+  .dialog-content {
+    padding: 28px 20px;
+  }
+
+  .dialog-title {
+    font-size: 26px;
+  }
+
+  .dialog-decoration-1,
+  .dialog-decoration-2,
+  .dialog-decoration-3 {
+    display: none;
+  }
+
+  .card {
+    box-shadow: 4px 4px 0 var(--shadow-color);
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 var(--shadow-color);
+  }
+}
