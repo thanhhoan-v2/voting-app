@@ -228,3 +228,255 @@ the name `SnowfallWrapper` is defined multiple times
 [00:04:19.781] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
 [00:04:19.914] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:04:20.235] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:05:26.683] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:05:26.803] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:26.918] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:05:27.606] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:05:27.698] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:27.803] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:05:27.812] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:05:27.878] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:27.986] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:05:27.999] Server  ERROR   ⨯ Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:05:28.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:28.191] Browser ERROR   uncaughtError: Error: Attempted to call useUser() from the server but useUser is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:06:08.811] Server  LOG     ✓ Compiled in 122ms
+[00:06:08.918] Browser ERROR   ./src/app/layout.tsx:9:14
+Ecmascript file had an error
+   7 | import SnowfallComponent from '@/components/Snowfall';
+   8 |
+>  9 | export const metadata: Metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'VoteBox - Make Your Voice Heard',
+  11 |   description: 'Create polls, vote, and see results in real-time',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./src/app/layout.tsx [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/layout.tsx [Client Component SSR]
+    ./src/app/layout.tsx [Server Component]
+[00:06:15.684] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.685] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.696] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.697] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.697] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.697] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.698] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.698] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.698] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.698] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.698] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.699] Server  ERROR   ⨯ ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:06:15.728] Server  LOG     ✓ Compiled in 66ms
+[00:06:15.832] Browser ERROR   ./src/app/layout.tsx:3:1
+Module not found: Can't resolve './LayoutContent'
+  1 | import type { Metadata } from 'next';
+  2 | import { UserProvider } from '@/contexts/UserContext';
+> 3 | import LayoutContent from './LayoutContent';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export const metadata: Metadata = {
+  6 |   title: 'VoteBox - Make Your Voice Heard',
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:21.186] Server  LOG     ✓ Compiled in 71ms
+[00:06:21.564] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:21.599] Server  LOG     [0ms] Starting fetch for poll 3
+[00:06:21.599] Server  LOG     Fetching poll 3
+[00:06:21.617] Server  LOG     [0ms] Starting fetch for poll 3
+[00:06:21.618] Server  LOG     Fetching poll 3
+[00:06:26.488] Server  LOG     getPollById completed in 4888ms for poll 3 with 4 options
+[00:06:26.489] Server  LOG     [4890ms] Data fetch completed
+[00:06:26.489] Server  LOG     [4890ms] Total request completed
+[00:06:28.780] Server  LOG     getPollById completed in 7162ms for poll 3 with 4 options
+[00:06:28.789] Server  LOG     [7172ms] Data fetch completed
+[00:06:28.791] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:06:29.586] Server  LOG     Vote check completed in 795ms, found: true
+[00:06:29.877] Server  LOG     [8259ms] Total request completed
+[00:07:05.080] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:05.107] Server  LOG     [0ms] Starting fetch for poll 3
+[00:07:05.108] Server  LOG     Fetching poll 3
+[00:07:05.126] Server  LOG     [0ms] Starting fetch for poll 3
+[00:07:05.127] Server  LOG     Fetching poll 3
+[00:07:08.912] Server  LOG     getPollById completed in 3804ms for poll 3 with 4 options
+[00:07:08.912] Server  LOG     [3805ms] Data fetch completed
+[00:07:08.913] Server  LOG     [3806ms] Total request completed
+[00:07:12.451] Server  LOG     getPollById completed in 7324ms for poll 3 with 4 options
+[00:07:12.451] Server  LOG     [7325ms] Data fetch completed
+[00:07:12.452] Server  LOG     Checking vote for poll 3, user hoan_thanh
+[00:07:13.224] Server  LOG     Vote check completed in 773ms, found: true
+[00:07:13.491] Server  LOG     [8365ms] Total request completed
