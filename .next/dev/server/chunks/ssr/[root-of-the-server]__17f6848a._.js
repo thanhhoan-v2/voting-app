@@ -278,67 +278,67 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-jsx/style.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-'use client';
+"use client";
 ;
 ;
 ;
 function QuestionModal({ onVerified }) {
-    const [inputValue, setInputValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
+    const [inputValue, setInputValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [isClosing, setIsClosing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    const CORRECT_ANSWER = 'nói xấu người hàn';
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const CORRECT_ANSWER = "nói xấu người hàn";
     const handleSubmit = (e)=>{
         e.preventDefault();
         const answer = inputValue.trim().toLowerCase();
         if (answer === CORRECT_ANSWER.toLowerCase()) {
             setIsClosing(true);
             setTimeout(()=>{
-                localStorage.setItem('voting_app_verified', 'true');
+                localStorage.setItem("voting_app_verified", "true");
                 onVerified();
             }, 300);
         } else {
-            setError('Dạ sai ròi ạ!');
-            setInputValue('');
+            setError("Phải gì ạ");
+            setInputValue("");
             // Shake animation
             const form = e.target;
-            form.style.animation = 'shake 0.5s ease-in-out';
+            form.style.animation = "shake 0.5s ease-in-out";
             setTimeout(()=>{
-                form.style.animation = '';
+                form.style.animation = "";
             }, 500);
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "jsx-4e37d55939b3f512" + " " + `dialog-overlay ${isClosing ? 'dialog-closing' : ''}`,
+        className: "jsx-959ba3e5e1e7e5a1" + " " + `dialog-overlay ${isClosing ? "dialog-closing" : ""}`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-4e37d55939b3f512" + " " + `dialog-container ${isClosing ? 'dialog-content-closing' : ''}`,
+                className: "jsx-959ba3e5e1e7e5a1" + " " + `dialog-container ${isClosing ? "dialog-content-closing" : ""}`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-4e37d55939b3f512" + " " + "dialog-decoration dialog-decoration-1"
+                        className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-decoration dialog-decoration-1"
                     }, void 0, false, {
                         fileName: "[project]/src/components/QuestionModal.tsx",
-                        lineNumber: 39,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-4e37d55939b3f512" + " " + "dialog-decoration dialog-decoration-2"
+                        className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-decoration dialog-decoration-2"
                     }, void 0, false, {
                         fileName: "[project]/src/components/QuestionModal.tsx",
-                        lineNumber: 40,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-4e37d55939b3f512" + " " + "dialog-decoration dialog-decoration-3"
+                        className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-decoration dialog-decoration-3"
                     }, void 0, false, {
                         fileName: "[project]/src/components/QuestionModal.tsx",
-                        lineNumber: 41,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-4e37d55939b3f512" + " " + "dialog-content",
+                        className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-content",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-4e37d55939b3f512" + " " + "dialog-icon",
+                                className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-icon",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                     width: "48",
                                     height: "48",
@@ -346,72 +346,72 @@ function QuestionModal({ onVerified }) {
                                     fill: "none",
                                     stroke: "currentColor",
                                     strokeWidth: "2.5",
-                                    className: "jsx-4e37d55939b3f512",
+                                    className: "jsx-959ba3e5e1e7e5a1",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                         d: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
-                                        className: "jsx-4e37d55939b3f512"
+                                        className: "jsx-959ba3e5e1e7e5a1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/QuestionModal.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 59,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/QuestionModal.tsx",
-                                    lineNumber: 45,
+                                    lineNumber: 51,
                                     columnNumber: 13
                                 }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/QuestionModal.tsx",
-                                lineNumber: 44,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "jsx-4e37d55939b3f512" + " " + "dialog-title",
-                                children: "Security Question"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/QuestionModal.tsx",
                                 lineNumber: 50,
                                 columnNumber: 11
                             }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-title",
+                                children: "Security Question"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/QuestionModal.tsx",
+                                lineNumber: 63,
+                                columnNumber: 11
+                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "jsx-4e37d55939b3f512" + " " + "dialog-subtitle",
+                                className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-subtitle",
                                 children: "Nấu xói người hàn là gì?"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/QuestionModal.tsx",
-                                lineNumber: 51,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                 onSubmit: handleSubmit,
-                                className: "jsx-4e37d55939b3f512" + " " + "dialog-form",
+                                className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-form",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                         type: "text",
                                         value: inputValue,
                                         onChange: (e)=>{
                                             setInputValue(e.target.value);
-                                            setError('');
+                                            setError("");
                                         },
                                         placeholder: "Enter your answer...",
                                         autoFocus: true,
-                                        className: "jsx-4e37d55939b3f512" + " " + "dialog-input"
+                                        className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-input"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/QuestionModal.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 67,
                                         columnNumber: 13
                                     }, this),
                                     error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "jsx-4e37d55939b3f512" + " " + "text-[var(--accent-coral)] text-sm font-medium mt-2",
+                                        className: "jsx-959ba3e5e1e7e5a1" + " " + "text-[var(--accent-coral)] text-sm font-medium mt-2",
                                         children: error
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/QuestionModal.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 79,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         type: "submit",
                                         disabled: !inputValue.trim(),
-                                        className: "jsx-4e37d55939b3f512" + " " + "dialog-button",
+                                        className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-button",
                                         children: [
                                             "Verify",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -421,60 +421,60 @@ function QuestionModal({ onVerified }) {
                                                 fill: "none",
                                                 stroke: "currentColor",
                                                 strokeWidth: "2.5",
-                                                className: "jsx-4e37d55939b3f512",
+                                                className: "jsx-959ba3e5e1e7e5a1",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                     d: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-                                                    className: "jsx-4e37d55939b3f512"
+                                                    className: "jsx-959ba3e5e1e7e5a1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/QuestionModal.tsx",
-                                                    lineNumber: 77,
+                                                    lineNumber: 97,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/QuestionModal.tsx",
-                                                lineNumber: 76,
+                                                lineNumber: 89,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/QuestionModal.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/QuestionModal.tsx",
-                                lineNumber: 53,
+                                lineNumber: 66,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "jsx-4e37d55939b3f512" + " " + "dialog-note",
+                                className: "jsx-959ba3e5e1e7e5a1" + " " + "dialog-note",
                                 children: "Answer correctly to access the voting app"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/QuestionModal.tsx",
-                                lineNumber: 82,
+                                lineNumber: 102,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/QuestionModal.tsx",
-                        lineNumber: 43,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/QuestionModal.tsx",
-                lineNumber: 37,
+                lineNumber: 41,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                id: "4e37d55939b3f512",
+                id: "959ba3e5e1e7e5a1",
                 children: "@keyframes shake{0%,to{transform:translate(0)}25%{transform:translate(-5px)}75%{transform:translate(5px)}}"
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/QuestionModal.tsx",
-        lineNumber: 36,
+        lineNumber: 40,
         columnNumber: 5
     }, this);
 }

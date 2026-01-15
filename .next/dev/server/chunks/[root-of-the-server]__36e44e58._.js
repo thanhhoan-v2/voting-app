@@ -75,8 +75,12 @@ __turbopack_context__.s([
     ()=>getComments,
     "getPollById",
     ()=>getPollById,
+    "getPollVotes",
+    ()=>getPollVotes,
     "getPolls",
     ()=>getPolls,
+    "getUserVoteInfo",
+    ()=>getUserVoteInfo,
     "getUsers",
     ()=>getUsers,
     "hasUserVoted",
@@ -116,6 +120,7 @@ async function createTables() {
         poll_id INTEGER REFERENCES polls(id) ON DELETE CASCADE,
         option_text VARCHAR(200) NOT NULL,
         image_url TEXT,
+        map_url TEXT,
         added_by_name VARCHAR(100),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
@@ -152,6 +157,9 @@ async function createTables() {
     `;
         await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sql"]`
       ALTER TABLE poll_options ADD COLUMN IF NOT EXISTS added_by_name VARCHAR(100)
+    `;
+        await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sql"]`
+      ALTER TABLE poll_options ADD COLUMN IF NOT EXISTS map_url TEXT
     `;
         await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sql"]`
       ALTER TABLE votes ADD COLUMN IF NOT EXISTS display_name VARCHAR(100)
@@ -331,11 +339,11 @@ async function hasUserVoted(pollId, displayName) {
         throw error;
     }
 }
-async function addPollOption(pollId, optionText, imageUrl, addedByName) {
+async function addPollOption(pollId, optionText, imageUrl, mapUrl, addedByName) {
     try {
         const [option] = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sql"]`
-      INSERT INTO poll_options (poll_id, option_text, image_url, added_by_name)
-      VALUES (${pollId}, ${optionText}, ${imageUrl}, ${addedByName})
+      INSERT INTO poll_options (poll_id, option_text, image_url, map_url, added_by_name)
+      VALUES (${pollId}, ${optionText}, ${imageUrl}, ${mapUrl}, ${addedByName})
       RETURNING *
     `;
         console.log('Option added:', option);
@@ -400,6 +408,35 @@ async function deleteVote(pollId, displayName) {
         throw error;
     }
 }
+async function getUserVoteInfo(pollId, displayName) {
+    try {
+        const [vote] = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sql"]`
+      SELECT v.*, po.option_text, po.image_url, po.map_url
+      FROM votes v
+      JOIN poll_options po ON v.option_id = po.id
+      WHERE v.poll_id = ${pollId} AND v.display_name = ${displayName}
+    `;
+        return vote || null;
+    } catch (error) {
+        console.error('Error getting vote info:', error);
+        throw error;
+    }
+}
+async function getPollVotes(pollId) {
+    try {
+        const votes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sql"]`
+      SELECT v.display_name, v.option_id, v.created_at, po.option_text, po.image_url, po.map_url
+      FROM votes v
+      JOIN poll_options po ON v.option_id = po.id
+      WHERE v.poll_id = ${pollId}
+      ORDER BY v.created_at DESC
+    `;
+        return votes;
+    } catch (error) {
+        console.error('Error getting poll votes:', error);
+        throw error;
+    }
+}
 }),
 "[project]/src/app/api/polls/[id]/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -434,12 +471,12 @@ async function GET(request, { params }) {
                 status: 404
             });
         }
-        // Check vote status only if displayName is provided
+        // Check vote status and get vote info only if displayName is provided
         let votedOptionId = null;
+        let voteInfo = null;
         if (displayName) {
-            const voteStartTime = Date.now();
             votedOptionId = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2d$actions$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["hasUserVoted"])(pollId, displayName);
-            console.log(`[${Date.now() - voteStartTime}ms] Vote check completed`);
+            voteInfo = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2d$actions$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getUserVoteInfo"])(pollId, displayName);
         }
         const totalTime = Date.now() - startTime;
         console.log(`[${totalTime}ms] Total request completed`);
@@ -447,6 +484,7 @@ async function GET(request, { params }) {
             poll,
             hasVoted: votedOptionId !== null,
             votedOptionId,
+            voteInfo,
             comments
         });
     } catch (error) {

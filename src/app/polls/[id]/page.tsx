@@ -175,6 +175,12 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
   const handleAddOption = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newOptionText.trim() || !displayName || !poll) return;
+    
+    // 지도 URL 유효성 검사
+    if (newOptionMapUrl && !isValidMapUrl(newOptionMapUrl)) {
+      alert('Please enter a valid Google Maps URL');
+      return;
+    }
 
     // Optimistic option 생성
     const tempId = Date.now();
@@ -334,6 +340,40 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
     reader.readAsDataURL(file);
   };
 
+  // Google Maps URL 변환 함수
+  const convertToEmbedUrl = (url: string) => {
+    if (!url) return '';
+    
+    // Google Maps URL에서 좌표 추출
+    const match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (match) {
+      const [, lat, lng] = match;
+      // OpenStreetMap 사용 (더 간단한 임베딩)
+      return `https://www.openstreetmap.org/export/embed.html?bbox=${parseFloat(lng)-0.01},${parseFloat(lat)-0.01},${parseFloat(lng)+0.01},${parseFloat(lat)+0.01}&layer=mapnik&marker=${lat},${lng}`;
+    }
+    
+    // 이미 embed URL이면 그대로 반환
+    if (url.includes('/embed/')) {
+      return url;
+    }
+    
+    // Google Maps 좌표가 있는지 확인
+    const coordMatch = url.match(/!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/);
+    if (coordMatch) {
+      const [, lat, lng] = coordMatch;
+      return `https://www.openstreetmap.org/export/embed.html?bbox=${parseFloat(lng)-0.01},${parseFloat(lat)-0.01},${parseFloat(lng)+0.01},${parseFloat(lat)+0.01}&layer=mapnik&marker=${lat},${lng}`;
+    }
+    
+    // 기본적으로 OpenStreetMap으로 시도
+    return `https://www.openstreetmap.org/export/embed.html?bbox=-0.01,-0.01,0.01,0.01&layer=mapnik`;
+  };
+
+  // Google Maps URL 유효성 검사
+  const isValidMapUrl = (url: string) => {
+    if (!url) return true; // 빈 값은 허용
+    return url.includes('maps.google.com') || url.includes('google.com/maps') || url.includes('openstreetmap.org');
+  };
+
   // 시간 포맷
   const formatTime = (dateString: string) => {
     const date = new Date(dateString);
@@ -479,10 +519,10 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                      )}
 
                      {/* 지도 URL이 있으면 표시 */}
-                     {option.map_url && (
+                     {option.map_url && isValidMapUrl(option.map_url) && (
                        <div className="mb-3">
                          <iframe
-                           src={option.map_url}
+                           src={convertToEmbedUrl(option.map_url)}
                            width="100%"
                            height="200"
                            style={{ border: 0 }}
@@ -490,7 +530,11 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                            loading="lazy"
                            referrerPolicy="no-referrer-when-downgrade"
                            className="rounded-lg border-2 border-[var(--border-color)]"
+                           title="Map Location"
                          />
+                         <p className="text-xs text-[var(--text-muted)] mt-1">
+                           📍 Location added
+                         </p>
                        </div>
                      )}
 
@@ -572,9 +616,12 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                     type="url"
                     value={newOptionMapUrl}
                     onChange={(e) => setNewOptionMapUrl(e.target.value)}
-                    placeholder="Add Google Maps URL (optional)..."
+                    placeholder="Paste Google Maps share link (optional)..."
                     className="input-field mb-4"
                   />
+                  <p className="text-xs text-[var(--text-muted)] mb-4">
+                    📍 Paste any Google Maps link - we'll convert it to an interactive map
+                  </p>
 
                   {newOptionImage ? (
                   <div className="image-preview mb-4">
@@ -647,11 +694,11 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                 <p className="text-body text-sm mb-2">You voted for: <span className="font-semibold">{voteInfo.option_text}</span></p>
                 
                 {/* 투표한 옵션의 지도가 있으면 표시 */}
-                {voteInfo.map_url && (
+                {voteInfo.map_url && isValidMapUrl(voteInfo.map_url) && (
                   <div className="mb-4">
-                    <p className="text-sm text-[var(--text-muted)] mb-2">Location:</p>
+                    <p className="text-sm text-[var(--text-muted)] mb-2">Your voted location:</p>
                     <iframe
-                      src={voteInfo.map_url}
+                      src={convertToEmbedUrl(voteInfo.map_url)}
                       width="100%"
                       height="150"
                       style={{ border: 0 }}
@@ -659,6 +706,7 @@ export default function PollPage({ params }: { params: Promise<{ id: string }> }
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       className="rounded-lg border-2 border-[var(--border-color)]"
+                      title="Voted Location"
                     />
                   </div>
                 )}
